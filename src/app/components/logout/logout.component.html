@@ -1,0 +1,1 @@
+<h1>User logout</h1>

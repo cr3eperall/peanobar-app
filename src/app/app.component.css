@@ -1,0 +1,10 @@
+app-login {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:600px) {
+    app-login{
+        margin-top: 20vh;
+    }
+}

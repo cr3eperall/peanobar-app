@@ -1,0 +1,3 @@
+<div class="container" *ngIf="qrcodeData.length>0">
+    <qrcode [qrdata]="qrcodeData" [width]="width" [errorCorrectionLevel]="'Q'" [elementType]="'svg'"></qrcode>
+</div>

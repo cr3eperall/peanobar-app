@@ -1,0 +1,104 @@
+.selector{
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    height: auto;
+    min-height: 800px;
+}
+
+.page{
+    margin: auto 0;
+    margin-right: 1em;
+}
+
+.size{
+    margin: auto 0;
+    margin-left: 1em;
+}
+
+.orders{
+    background-color: lightgray;
+    border-style: solid;
+    height: var(--height)
+}
+
+.order-item:first-child{
+    border-top: 1px solid darkgray !important;
+}
+
+.order-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 1em;
+    border-width: 0px;
+    border-bottom: 1px solid darkgray;
+    height: 50px;
+}
+
+.order-item h4{
+    margin:auto 0;
+    text-align: center;
+}
+
+.page button{
+    height: 30px !important;
+    font-size: medium !important;
+}
+
+#prev{
+    border-top-right-radius: 0% !important;
+    border-bottom-right-radius: 0% !important;
+}
+
+#next{
+    border-top-left-radius: 0% !important;
+    border-bottom-left-radius: 0% !important;
+}
+
+#size{
+    font-size: large;
+}
+
+.order-item button , .page button{
+    text-align: center;
+    color: black;
+    height: 30px;
+    width: 75px;
+    font-size: large;
+    margin:auto 0;
+    padding: 0;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: coral;
+    transition: .1s;
+    box-shadow: 0px 2px 10px gray ;
+}
+
+.order-item button:hover, .page button:hover{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(243, 121, 76);
+    box-shadow: 0px 0px 10px gray ;
+    transition: .1s;
+}
+
+.order-item button:active, .page button:active{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(235, 94, 43);
+    box-shadow: 0px 0px 0px gray ;
+    transition: .1s;
+}
+
+.page button:disabled{
+    background-color: rgb(164, 132, 120);
+    border-color: black;
+    border-width: 0px;
+    box-shadow: 0px 0px 0px gray;
+    transition: .1s;
+}

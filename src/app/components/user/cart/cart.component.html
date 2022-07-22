@@ -1,0 +1,10 @@
+<div class="products">
+    <app-product *ngFor="let product of orders.contents" [product]="product.product" [quantity]="product.quantity" (qChanged)="onChangeQ($event,product)"></app-product>
+    <div class="push"></div>
+    <h1 *ngIf="orders.contents.length==0">Cart is empty</h1>
+</div>
+<div class="total">
+    <h2>Total: {{(total()/100).toFixed(2)}}€</h2>
+    <button [disabled]="orders.contents.length==0" (click)="order()">Order</button>
+</div>
+<app-order-overlay [hidden]="openOrder" (closed)="close()"></app-order-overlay>

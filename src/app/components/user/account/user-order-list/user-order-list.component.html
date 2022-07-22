@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="selector">
+        <div class="page">
+            <button [disabled]="prevDisabled" (click)="pagePrev()" id="prev">Previous</button>
+            <button [disabled]="nextDisabled" (click)="pageNext()" id="next">Next</button>
+        </div>
+        <div class="size">
+            <select (change)="sizeChanged()" [(ngModel)]="size" name="size" id="size">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+    </div>
+    <div class="orders">
+        <div *ngFor="let order of orders" class="order-item">
+            <h4>{{order.madeAt | date:'dd/MM/YYYY HH:mm':'it-IT'}}</h4>
+            <h4>{{format(order.status)}}</h4>
+            <h4>Total: {{(order.total/100).toFixed(2)}}€</h4>
+            <button (click)="openOverlay(order)">Details</button>
+        </div>
+    </div>
+</div>
+<app-account-order-overlay (closed)="onClose()" [hidden]="overlayVisibility" [order]="selectedOrder"></app-account-order-overlay>

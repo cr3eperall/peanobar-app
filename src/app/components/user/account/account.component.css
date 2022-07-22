@@ -1,0 +1,84 @@
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.email{
+    margin: 2em 0;
+    margin-left: 1em;
+}
+
+.password{
+    height: 400px;
+    margin: 2em 0;
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.message{
+    background-color: lightcoral;
+    color: red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    height: 100%;
+}
+
+.password input{
+    width: 300px;
+    font-size: large;
+    padding: 5px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(99, 99, 99);
+}
+
+.password button {
+    margin: 1em 0;
+    padding: 5px;
+    height: 40px;
+    width: 315px;
+    font-size: larger;
+    color: black;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: rgb(255, 127, 80);
+    transition: .2s;
+    box-shadow: 0px 2px 10px rgb(169, 169, 169);
+}
+
+.password button:hover{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(250, 117, 70);
+    box-shadow: 0px 0px 10px rgb(169, 169, 169);
+    transition: .1s;
+}
+
+.password button:active{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(247, 103, 50);
+    box-shadow: 0px 0px 0px gray ;
+    transition: .1s;
+}
+
+.password button:disabled{
+    background-color: rgb(164, 132, 120);
+    border-color: black;
+    border-width: 0px;
+    box-shadow: 0px 0px 0px gray;
+    transition: .1s;
+}
+
+.orders{
+    margin: 2em 0;
+    margin-left: 1em;
+}

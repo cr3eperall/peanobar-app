@@ -1,0 +1,97 @@
+::ng-deep :root {
+    --bg-color: rgb(111, 165, 239);
+    --border-color: rgb(99, 99, 99);
+}
+
+.login-container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    border-color: var(--border-color);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: clamp(1em,3%,3em);
+    background-color: var(--bg-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-message{
+    visibility: var(--message-visibility);
+    border-color: var(--message-border-color);
+    background-color: var(--color);
+    border-style: solid;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.login-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+
+.login-options button{
+    margin: 0;
+    height: 100%;
+    width: 30%;
+    font-size: larger;
+    color: black;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: coral;
+    transition: .1s;
+    box-shadow: 0px 2px 10px gray ;
+}
+
+.login-options button:hover{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(243, 121, 76);
+    box-shadow: 0px 0px 10px gray ;
+    transition: .1s;
+}
+
+.login-options button:active{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(235, 94, 43);
+    box-shadow: 0px 0px 0px gray ;
+    transition: .1s;
+}
+
+.login-options a{
+    margin: 0;
+    vertical-align: middle !important;
+}
+
+@media (min-width:600px) {
+    .login-container{
+        margin-top: 20vh;
+    }
+}
+
+input{
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--border-color);
+}
+
+h2{
+    margin-bottom: 0px !important;
+}
+
+.login-container *{
+    margin: 1em 0 1em 0;
+    font-family: Sans-Serif;
+}
