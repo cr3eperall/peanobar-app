@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { OrderDTO } from './OrderDTO';
 import { Observable } from 'rxjs';
 import { ProductDTO } from './ProductDTO';
@@ -9,7 +10,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class OrderService {
-  apiUrl="http://192.168.178.111:8080/peanobar/api"
+  apiUrl=environment.apiUrl;
   constructor(private http:HttpClient, private loginService:LoginService) { }
 
   addToCart(product:ProductDTO,quantity:number):Observable<OrderDTO>{

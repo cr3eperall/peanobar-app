@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { LoginService } from './login.service';
 import { HttpClient} from '@angular/common/http';
 import { Observable, subscribeOn } from 'rxjs';
@@ -10,7 +11,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class ImageService {
   public cache=new Map<number, SafeUrl>();
   constructor(private http:HttpClient,private loginService: LoginService,private sanitizer:DomSanitizer) { }
-  apiUrl="http://192.168.178.111:8080/peanobar/api";
+  apiUrl=environment.apiUrl;
 
   getImage(id:number):Observable<SafeUrl>{
     const obs=new Observable<SafeUrl>((subscriber)=>{

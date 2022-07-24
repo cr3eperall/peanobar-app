@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { OrderDTO, OrderStatus } from './OrderDTO';
 import { UserDTO } from './UserDTO';
 import { LoginDTO } from './LoginDTO';
@@ -9,7 +10,7 @@ import { catchError, throwError, Observable, subscribeOn } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  apiUrl="http://192.168.178.111:8080/peanobar/api"
+  apiUrl=environment.apiUrl;
   constructor(private http:HttpClient) { }
 
   public loginStatus(): Observable<number>{
