@@ -77,6 +77,7 @@ export class QuantitySelectorOverlayComponent implements OnInit {
           this.close();
         },
         error:()=>{
+          //TODO do something else
           alert("error");
         }
       })

@@ -39,13 +39,13 @@ export class LoginComponent implements OnInit {
   setMessage(type:number){
     switch (type) {
       case 0:
-        this.loginSucc="Wrong credentials";
+        this.loginSucc=$localize `Wrong credentials`;
         this.messageVisibility="visible";
         this.color="rgb(221, 75, 57)";
         this.borderColor="rgb(255, 0, 0)";
         break;
       case 1:
-        this.loginSucc="Login success";
+        this.loginSucc=$localize `Login success`;
         this.messageVisibility="visible";
         this.color="rgb(4, 238, 4)";
         this.borderColor="rgb(0, 255, 0)";
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/home"]);
         break;
       case 2:
-        this.loginSucc="Already logged in";
+        this.loginSucc=$localize `Already logged in`;
         this.messageVisibility="visible";
         this.color="rgb(38, 67, 189)";
         this.borderColor="rgb(0, 0, 255)";
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/home"]);
         break;
       case 3:
-        this.loginSucc="Session expired";
+        this.loginSucc=$localize `Session expired`;
         this.messageVisibility="visible";
         this.color="rgba(50, 50, 50, 50%)";
         this.borderColor="rgb(0, 0, 0)";

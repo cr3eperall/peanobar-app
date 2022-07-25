@@ -4,6 +4,10 @@
   "newProjectRoot": "projects",
   "projects": {
     "peanobar-app": {
+      "i18n":{
+        "sourceLocale":"en",
+        "locales":{"it":"src/locale/messages.it-IT.xlf"}
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize":true,
             "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -57,6 +62,7 @@
               "buildOptimizer": true
             },
             "development": {
+              "localize": ["en"],
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,

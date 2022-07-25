@@ -1,11 +1,11 @@
 <div class="container">
-    <button *ngIf="router.url==='/cart'" class="x" (click)="close()"><img src="assets/chiudi.png" alt=""></button>
+    <button *ngIf="router.url==='/cart'" class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
     <img [src]="image" alt="">
     <div class="text">
         <h2>{{product.name}}</h2>
         <div class="buy">
             <p>{{(product.cost*quantity/100).toFixed(2)}}€</p>
-            <button *ngIf="router.url==='/home'" (click)="onClick()">Add to Cart</button>
+            <button *ngIf="router.url==='/home'" (click)="onClick()" i18n>Add to Cart</button>
             <app-quantity-selector *ngIf="router.url==='/cart'" [quantity]="quantity" (qChanged)="onChangeQ($event)"></app-quantity-selector>
         </div>
     </div>

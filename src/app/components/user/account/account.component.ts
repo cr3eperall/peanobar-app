@@ -33,6 +33,7 @@ export class AccountComponent implements OnInit {
     if (this.password!=this.passwordConfirm) {
       return;
     }
+    //TODO show error message
     this.loginService.changePassword(this.oldPassword,this.password).subscribe({
       next:(value)=>{
         if (value=="OK") {
@@ -49,9 +50,9 @@ export class AccountComponent implements OnInit {
 
   checkPw(){
     if (this.password!=this.passwordConfirm) {
-      this.message="Passwords do not match";
+      this.message=$localize `Passwords do not match`;
     }else if(this.password.length<8){
-      this.message="Passwords too short";
+      this.message=$localize `Passwords too short`;
     }else{
       this.message="";
     }

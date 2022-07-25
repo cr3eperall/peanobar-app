@@ -35,21 +35,23 @@ export class UserOrderListComponent implements OnInit {
   format(status:OrderStatus):string{
     switch (status) {
       case OrderStatus.IN_PROGRESS:
-        return "In Progress";
+        return $localize `In Progress`;
         break;
       case OrderStatus.IN_CART:
-        return "In Cart";
+        return $localize `In Cart`;
         break;
       case OrderStatus.COMPLETED:
-        return "Completed";
+        return $localize `Completed`;
         break;
       default:
-        return "undefined"
+        return $localize `undefined`
         break;
     }
   }
 
   updateTable(){
+    this.prevDisabled=true;
+    this.nextDisabled=true;
     this.orderService.countOrders().subscribe((value)=>{
       this.nOrders=value;
       if (this.page<=1) {

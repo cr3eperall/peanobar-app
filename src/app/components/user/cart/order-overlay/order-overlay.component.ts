@@ -22,7 +22,7 @@ export class OrderOverlayComponent implements OnInit {
   bgColor="green";
   @HostBinding("style.--msg-color")
   msgColor="black"
-  message="Order Sent";
+  message=$localize `Order Sent`;
 
   @HostBinding("style.--hidden")
   private _hidden="hidden";
@@ -57,7 +57,7 @@ export class OrderOverlayComponent implements OnInit {
     this.orderService.sendOrder().subscribe({
       next: (value)=>{
         if(value.status==OrderStatus.IN_PROGRESS){
-          this.message="Order Sent";
+          this.message=$localize `Order Sent`;
           this.prodHidden="hidden";
           this.bgColor="green";
           this.msgColor="black";
@@ -65,9 +65,9 @@ export class OrderOverlayComponent implements OnInit {
         }
       },error:(err:HttpErrorResponse)=>{
         if(err.error.startsWith("Not enough balance")){
-          this.message="Not enough balance";
+          this.message=$localize `Not enough balance`;
         }else{
-          this.message="Error";
+          this.message=$localize `Error`;
         }
         this.prodHidden="visible";
         this.bgColor="rgb(221, 75, 57)";

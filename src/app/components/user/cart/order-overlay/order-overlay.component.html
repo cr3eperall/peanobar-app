@@ -1,8 +1,8 @@
 <div *ngIf="orders!==undefined" class="overlay">
     <div class="container">
         <div class="top">
-            <h2>Order Recipit</h2>
-            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt=""></button>
+            <h2 i18n>Order Recipit</h2>
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
         </div>
         <div class="items">
             <div class="product" *ngFor="let item of orders.contents">
@@ -15,7 +15,7 @@
             </div>
         </div>
         <h2 class="message">{{message}}</h2>
-        <h2 class="total">Total: {{(orders.total/100).toFixed(2)}}€</h2>
-        <button [disabled]="prodHidden=='hidden'" class="order" (click)="order()">Order</button>
+        <h2 class="total" i18n>Total: {{(orders.total/100).toFixed(2)}}€</h2>
+        <button [disabled]="prodHidden=='hidden'" class="order" (click)="order()" i18n>Order</button>
     </div>
 </div>

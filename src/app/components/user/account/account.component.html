@@ -3,18 +3,18 @@
     <div class="email">
         <p>{{user.email}}</p>
     </div>
-    <h2>Change password</h2>
+    <h2 i18n>Change password</h2>
     <div class="password">
-        <h3>Old Password</h3>
+        <h3 i18n>Old Password</h3>
         <input type="password" name="oldPassword" [(ngModel)]="oldPassword" required>
         <h3>Password</h3>
         <input type="password" autocomplete="none" name="password" (change)="checkPw()" (keypress)="checkPw()" required [(ngModel)]="password">
-        <h3>Confirm Password</h3>
+        <h3 i18n>Confirm Password</h3>
         <input type="password" autocomplete="none" name="passwordConfirm" (change)="checkPw()" pattern="(\d|(\d,\d{0,2}))" required [(ngModel)]="passwordConfirm">
         <h2 [hidden]="message.length==0" class="message">{{message}}</h2>
-        <button [disabled]="disabled" (click)="changePw()" type="submit">Change password</button>
+        <button [disabled]="disabled" (click)="changePw()" type="submit" i18n>Change password</button>
     </div>
-    <h2>Old orders</h2>
+    <h2 i18n>Old orders</h2>
     <div class="orders">
         <app-user-order-list></app-user-order-list>
     </div>

@@ -4,13 +4,13 @@
             <h1 class="title">PEANO BAR</h1>
         </a>
         <a *ngIf="router.url !== '/login'&&router.url !== '/'" routerLink="qr"><img src="assets/qrcode_white.png" alt="QR" height="30px"></a>
-        <a *ngIf="router.url !== '/login'&&router.url !== '/'" routerLink="cart"><img src="assets/cart2.png" alt="Cart" height="30px"></a>
+        <a *ngIf="router.url !== '/login'&&router.url !== '/'" routerLink="cart"><img src="assets/cart2.png" alt="Cart" i18n-alt height="30px"></a>
     </div>
     <div class="right">
         <a *ngIf="router.url !== '/login'&&router.url !== '/'" routerLink="account">Account</a>
-        <a *ngIf="router.url !== '/login'&&router.url !== '/'" href="logout"><img src="assets/logout2.png" alt="Logout" height="30px"></a>
+        <a *ngIf="router.url !== '/login'&&router.url !== '/'" href="logout"><img src="assets/logout2.png" alt="Logout" i18n-alt height="30px"></a>
         <div *ngIf="router.url !== '/login'&&router.url !== '/' && user!==undefined">
-            <p>balance:</p>
+            <p i18n>balance:</p>
             <p>{{(user!.balance/100).toFixed(2)}}€</p>
         </div>
     </div>
