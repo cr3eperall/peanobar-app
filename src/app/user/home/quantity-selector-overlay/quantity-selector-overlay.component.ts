@@ -1,7 +1,7 @@
-import { OrderService } from './../../../../services/order.service';
+import { OrderService } from './../../../services/order.service';
 import { ImageService } from 'src/app/services/image.service';
 import { SafeUrl } from '@angular/platform-browser';
-import { ProductDTO } from './../../../../services/ProductDTO';
+import { ProductDTO } from './../../../services/ProductDTO';
 import { Component, HostBinding, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({

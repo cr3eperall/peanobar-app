@@ -2,7 +2,7 @@
     <div class="container">
         <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
         <img [src]="image" alt="">
-        <h2>{{product?.name}}</h2>
+        <h2>{{product.name}}</h2>
         <p class="total" i18n>Total: {{((product!.cost*(clamp(1,quantity,99)))/100).toFixed(2)}}€</p>
         <app-quantity-selector (qChanged)="quantity=$event"></app-quantity-selector>
         <button class="order" (click)="order()" i18n>Add to Cart</button>

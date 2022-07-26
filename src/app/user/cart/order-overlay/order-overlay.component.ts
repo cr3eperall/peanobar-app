@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { CartComponent } from './../cart.component';
-import { OrderDTO, OrderStatus } from './../../../../services/OrderDTO';
-import { LoginService } from './../../../../services/login.service';
-import { OrderService } from './../../../../services/order.service';
+import { OrderDTO, OrderStatus } from './../../../services/OrderDTO';
+import { LoginService } from './../../../services/login.service';
+import { OrderService } from './../../../services/order.service';
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { timer } from 'rxjs';
 

@@ -1,7 +1,7 @@
-import { OrderService } from './../../services/order.service';
+import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
 import { SafeUrl } from '@angular/platform-browser';
-import { ProductDTO, ProductType } from './../../services/ProductDTO';
+import { ProductDTO, ProductType } from '../../services/ProductDTO';
 import { Component, Input, OnInit, enableProdMode, Output, EventEmitter } from '@angular/core';
 import { ImageService } from 'src/app/services/image.service';
 

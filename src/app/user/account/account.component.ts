@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { LoginService } from './../../../services/login.service';
-import { UserDTO } from './../../../services/UserDTO';
-import { OrderDTO } from './../../../services/OrderDTO';
+import { LoginService } from './../../services/login.service';
+import { UserDTO } from './../../services/UserDTO';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

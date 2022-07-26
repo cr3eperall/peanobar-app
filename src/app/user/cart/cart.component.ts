@@ -1,8 +1,7 @@
 import { Observable } from 'rxjs';
-import { LoginService } from './../../../services/login.service';
-import { OrderService } from './../../../services/order.service';
-import { OrderDTO, OrderStatus, OrderItem } from './../../../services/OrderDTO';
-import { ProductDTO, ProductType } from './../../../services/ProductDTO';
+import { LoginService } from './../../services/login.service';
+import { OrderService } from './../../services/order.service';
+import { OrderDTO, OrderStatus, OrderItem } from './../../services/OrderDTO';
 import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({

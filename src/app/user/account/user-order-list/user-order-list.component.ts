@@ -1,5 +1,5 @@
-import { OrderDTO, OrderStatus } from './../../../../services/OrderDTO';
-import { OrderService } from './../../../../services/order.service';
+import { OrderDTO, OrderStatus } from './../../../services/OrderDTO';
+import { OrderService } from './../../../services/order.service';
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({

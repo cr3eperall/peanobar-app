@@ -1,4 +1,4 @@
-import { OrderDTO } from './../../../../../services/OrderDTO';
+import { OrderDTO } from './../../../../services/OrderDTO';
 import { Component, OnInit, Output, EventEmitter, HostBinding, Input } from '@angular/core';
 
 @Component({
