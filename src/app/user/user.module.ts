@@ -1,3 +1,4 @@
+import { UserRoutingModule } from './user-routing.module';
 import { ProductComponent } from '../user/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,10 +35,9 @@ import { UserHeaderComponent } from '../user/header/user-header.component';
     ProductComponent,
   ],
   imports: [
-    CommonModule,
     QRCodeModule,
-    BrowserModule,
-    AppRoutingModule,
+    CommonModule,
+    UserRoutingModule,
     HttpClientModule,
     FormsModule
   ],

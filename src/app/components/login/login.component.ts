@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from './../../services/login.service';
 import { Component, HostBinding, OnInit } from '@angular/core';
 
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   @HostBinding("style.--message-visibility")
   messageVisibility="hidden"
 
-  constructor(private loginService:LoginService, private router:Router) {
+  constructor(private loginService:LoginService, private router:Router, private route: ActivatedRoute) {
   }
   
   login(){
@@ -48,8 +48,9 @@ export class LoginComponent implements OnInit {
         this.messageVisibility="visible";
         this.color="rgb(4, 238, 4)";
         this.borderColor="rgb(0, 255, 0)";
+        
         //redirect to homepage for role
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/home"], {relativeTo:this.route});
         break;
       case 2:
         this.loginSucc=$localize `Already logged in`;
@@ -57,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.color="rgb(38, 67, 189)";
         this.borderColor="rgb(0, 0, 255)";
         //redirect to homepage for role
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/home"], {relativeTo:this.route});
         break;
       case 3:
         this.loginSucc=$localize `Session expired`;

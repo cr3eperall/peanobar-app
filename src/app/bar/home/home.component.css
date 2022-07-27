@@ -1,0 +1,43 @@
+.container{
+    width: 90%;
+    margin: 1em auto;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type=radio]{
+    appearance: none;
+}
+
+input[type=radio] + label{
+    user-select: none;
+    color: gray;
+    font-size: larger;
+}
+input[type=radio]:checked + label{
+    color: black;
+    text-decoration: underline;
+}
+
+.product{
+    background-color: hsl(0, 0%, 88%);
+    border: 1px solid gray;
+    border-radius: 1em;
+    margin: 1em auto;
+    padding-left: 1em;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50% auto 2em;
+}
+
+#quantity{
+    text-align: end;
+    display: grid;
+    width: 5em;
+    margin-left: auto;
+    grid-template-columns: 50% 50%;
+}

@@ -9,8 +9,6 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./user-header.component.css']
 })
 export class UserHeaderComponent implements OnInit {
-  @HostBinding("style.--header-color")
-  headerColor="rgb(111, 165, 239)";
   user?:UserDTO;
   constructor(public router:Router, private loginService:LoginService) {
     this.router.events.subscribe((value)=>{

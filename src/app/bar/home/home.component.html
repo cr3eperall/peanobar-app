@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="menu">
+        <h3>Order by:</h3>
+        <input type="radio" name="menu" id="byorder" value="byorder" checked="true" (change)="onChange($event)">
+        <label for="byorder">Order</label>
+        <input type="radio" name="menu" id="byproduct" value="byproduct" (change)="onChange($event)">
+        <label for="byproduct">Product</label>
+        <input type="radio" name="menu" id="byclass" value="byclass" (change)="onChange($event)">
+        <label for="byclass">Classroom</label>
+    </div>
+    <div class="byorder" *ngIf="sorting=='byorder'">
+        <app-order-toprocess *ngFor="let order of orders" [order]="order"></app-order-toprocess>
+    </div>
+    <div class="byproduct" *ngIf="sorting=='byproduct'">
+        <div class="product" *ngFor="let item of products">
+            <h2>{{item.product.name}}</h2>
+            <h2 id="quantity"><p>x</p> <p>{{item.quantity}}</p></h2>
+        </div>
+    </div>
+    <div class="byclass" *ngIf="sorting=='byclass'">
+        <div class="classroom">
+            <app-order-toprocess [type]="'classroom'" *ngFor="let order of classrooms" [order]="order"></app-order-toprocess>
+        </div>
+    </div>
+</div>

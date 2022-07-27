@@ -1,3 +1,4 @@
+import { BarModule } from './bar/bar.module';
 import { UserModule } from './user/user.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +19,6 @@ import { LogoutComponent } from './components/logout/logout.component';
     LogoutComponent
   ],
   imports: [
-    UserModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
