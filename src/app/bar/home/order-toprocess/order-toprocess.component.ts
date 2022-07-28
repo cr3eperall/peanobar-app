@@ -1,7 +1,7 @@
 import { UserService } from './../../../services/bar/user.service';
 import { UserDTO } from './../../../services/UserDTO';
 import { OrderDTO } from './../../../services/OrderDTO';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { expand } from 'rxjs';
 
 @Component({
@@ -16,6 +16,8 @@ export class OrderToprocessComponent implements OnInit {
   expanded=false;
   @Input()
   type:"user"|"classroom"="user";
+  @Output()
+  selectionChanged=new EventEmitter<{checked:boolean,order:OrderDTO,type:"user"|"classroom"}>();
   constructor(private userService:UserService) { }
   //TODO add media query;
   ngOnInit(): void {
@@ -49,16 +51,14 @@ export class OrderToprocessComponent implements OnInit {
   }
 
   completed(value:Event){
-    if((value.target as HTMLInputElement).checked){
-
-    }
+    this.selectionChanged.emit({checked:(value.target as HTMLInputElement).checked, order:this.order!,type:this.type});
   }
 
   toggleExpansion(value:Event){
     this.expanded=!this.expanded;
   }
 
-  getTotal(){
+  getTotal():number{
     let total=0;
     for (const item of this.order!.contents) {
       total+=item.product.cost*item.quantity;

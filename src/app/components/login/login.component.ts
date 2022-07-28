@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.borderColor="rgb(0, 255, 0)";
         
         //redirect to homepage for role
-        this.router.navigate(["/home"], {relativeTo:this.route});
+        this.router.navigate(["home"], {relativeTo:this.route});
         break;
       case 2:
         this.loginSucc=$localize `Already logged in`;
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.color="rgb(38, 67, 189)";
         this.borderColor="rgb(0, 0, 255)";
         //redirect to homepage for role
-        this.router.navigate(["/home"], {relativeTo:this.route});
+        this.router.navigate(["home"], {relativeTo:this.route});
         break;
       case 3:
         this.loginSucc=$localize `Session expired`;

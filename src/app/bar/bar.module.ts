@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { BarHeaderComponent } from './header/bar-header.component';
 import { OrderToprocessComponent } from './home/order-toprocess/order-toprocess.component';
+import { CompleteOverlayComponent } from './home/complete-overlay/complete-overlay.component';
 
 
 
@@ -12,7 +13,8 @@ import { OrderToprocessComponent } from './home/order-toprocess/order-toprocess.
   declarations: [
     HomeComponent,
     BarHeaderComponent,
-    OrderToprocessComponent
+    OrderToprocessComponent,
+    CompleteOverlayComponent
   ],
   imports: [
     BarRoutingModule,

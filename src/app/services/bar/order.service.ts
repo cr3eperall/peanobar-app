@@ -16,4 +16,11 @@ export class OrderService {
     const headers=this.loginService.getHeaders();
     return this.http.get<OrderDTO[]>(this.apiUrl+"/order/toprocess",{headers});
   }
+
+  complete(order:OrderDTO):Observable<OrderDTO>{
+    const headers=this.loginService.getHeaders();
+    const form=new FormData();
+    form.append("id",order.id.toString());
+    return this.http.post<OrderDTO>(this.apiUrl+"/order/complete",form,{headers});
+  }
 }

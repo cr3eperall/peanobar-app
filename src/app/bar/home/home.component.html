@@ -9,7 +9,8 @@
         <label for="byclass">Classroom</label>
     </div>
     <div class="byorder" *ngIf="sorting=='byorder'">
-        <app-order-toprocess *ngFor="let order of orders" [order]="order"></app-order-toprocess>
+        <app-order-toprocess *ngFor="let order of orders" [order]="order" (selectionChanged)="onSelect($event)"></app-order-toprocess>
+        <div class="push"></div>
     </div>
     <div class="byproduct" *ngIf="sorting=='byproduct'">
         <div class="product" *ngFor="let item of products">
@@ -19,7 +20,12 @@
     </div>
     <div class="byclass" *ngIf="sorting=='byclass'">
         <div class="classroom">
-            <app-order-toprocess [type]="'classroom'" *ngFor="let order of classrooms" [order]="order"></app-order-toprocess>
+            <app-order-toprocess [type]="'classroom'" *ngFor="let order of classrooms" [order]="order" (selectionChanged)="onSelect($event)"></app-order-toprocess>
+            <div class="push"></div>
         </div>
     </div>
 </div>
+<div class="complete-order">
+    <button [disabled]="isDisabled()" (click)="onOpen()">Mark as Completed</button>
+</div>
+<app-complete-overlay *ngIf="overlayVisible" [orders]="completedOrders" (completed)="onComplete()" (closed)="onClose()"></app-complete-overlay>
