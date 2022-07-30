@@ -7,7 +7,7 @@ export interface ProductDTO{
 }
 
 export enum ProductType{
-    PANINO,
-    BIBITA,
-    DOLCE
+    PANINO="PANINO",
+    BIBITA="BIBITA",
+    DOLCE="DOLCE"
 }

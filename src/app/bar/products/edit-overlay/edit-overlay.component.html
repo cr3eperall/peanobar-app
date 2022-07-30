@@ -1,0 +1,24 @@
+<div *ngIf="product!==undefined" class="overlay">
+    <div class="container">
+        <div class="top">
+            <h2 i18n>{{mode}} Product</h2>
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
+        </div>
+        <div class="editor">
+            <h3>Product Name:</h3>
+            <input type="text" name="name" id="name" [(ngModel)]="modelProduct!.name">
+            <h3>Cost:</h3>
+            <input type="number" name="name" id="name" [(ngModel)]="modelProduct!.cost" (input)="check()">
+            <h3>Type:</h3>
+            <select name="type" id="type" [(ngModel)]="modelProduct!.type">
+                <option value="PANINO">Panino</option>
+                <option value="BIBITA">Bibita</option>
+                <option value="DOLCE">Dolce</option>
+            </select>
+            <h3>Image:</h3>
+            <app-img-selector [selectedImg]="modelProduct!.img" (onSelected)="select($event)"></app-img-selector>
+        </div>
+        <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
+        <button [disabled]="isDisabled()" class="confirm" (click)="update()" i18n>Confirm</button>
+    </div>
+</div>

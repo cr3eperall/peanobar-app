@@ -1,0 +1,29 @@
+<div class="outside">
+    <button (click)="open=true">Select Image</button>
+    <div class="imgContainer"><img *ngIf="selectedImg!=undefined && getImg(selectedImg!)!=undefined" [src]="getImg(selectedImg!)!.url" alt=""></div>
+</div>
+<div *ngIf="open" class="overlay">
+    <div class="container">
+        <div class="top">
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
+        </div>
+        <div class="fill">
+            <div class="images">
+                <div *ngFor="let img of images" class="imgContainer">
+                    <input type="radio" name="images" [id]="img.id" class="select" [checked]="selectedImg==img.id">
+                    <label [for]="img.id">
+                        <img [src]="img.url" alt="" (click)="selected(img.id)">
+                    </label>
+                </div>
+                <div class="newImageContainer">
+                    <label for="newImage" class="newImage">
+                        <img src="assets/chiudi.png" alt="Add">
+                    </label>
+                    <input type="file" accept=".png, .jpg, .jpeg, .jfif" name="newImage" id="newImage" multiple="multiple" (change)="add($event)">
+                </div>
+            </div>
+        </div>
+        <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
+        <button [disabled]="isDisabled()" class="confirm" (click)="select()" i18n>Select</button>
+    </div>
+</div>

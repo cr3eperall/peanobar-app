@@ -99,5 +99,5 @@
 
 #quantityh3{
     display: grid;
-    grid-template-columns: 50% 2em;
+    grid-template-columns: 50% 2em .5em;
 }

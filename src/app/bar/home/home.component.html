@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-<div class="complete-order">
+<div *ngIf="sorting!='byproduct'" class="complete-order">
     <button [disabled]="isDisabled()" (click)="onOpen()">Mark as Completed</button>
 </div>
 <app-complete-overlay *ngIf="overlayVisible" [orders]="completedOrders" (completed)="onComplete()" (closed)="onClose()"></app-complete-overlay>

@@ -195,6 +195,5 @@ export class HomeComponent implements OnInit {
       this.sorting=e.value;
     }
     this.resetCompleted();
-    
   }
 }

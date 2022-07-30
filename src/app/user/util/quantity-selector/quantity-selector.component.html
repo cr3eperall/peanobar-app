@@ -1,5 +1,5 @@
 <div class="selector">
     <button class="sel" (click)="sub()">−</button>
-    <input [(ngModel)]="quantity" (change)="check()" min="1" max="99" value="1" type="number" >
+    <input [(ngModel)]="quantity" (input)="check()" min="1" max="99" value="1" type="number" >
     <button class="sel" (click)="add()">+</button>
 </div>

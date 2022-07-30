@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { LogoutComponent } from './components/logout/logout.component';
 
+//TODO add cursor to css
 
 @NgModule({
   declarations: [

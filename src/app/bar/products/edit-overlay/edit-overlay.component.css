@@ -1,7 +1,3 @@
-*{
-    font-family: sans-serif;
-}
-
 .overlay{
     position: fixed;
     top: 0;
@@ -30,6 +26,7 @@
     background-color: white;
     box-shadow: 5px 5px 50px 5px gray ;
     padding: 10px;
+    align-items: center;
 }
 .container::-webkit-scrollbar {
     display: none;
@@ -39,6 +36,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
 .top h2{
@@ -61,46 +59,6 @@
     height: 100%;
 }
 
-.items{
-    height: 100%;
-    margin: 1em;
-    background-color: whitesmoke;
-    overflow-y: scroll;
-    visibility: var(--prod-hidden);
-}
-
-.product:nth-child(1){
-    border-top: 2px solid lightgray !important;
-}
-
-.product{
-    height: auto;
-    border-style: solid;
-    border-left: 0px;
-    border-top: 0px;
-    border-right: 0px;
-    border-color: lightgray;
-    padding: .5em;
-}
-
-.product .name{
-    margin: 0;
-}
-
-.price > p{
-    margin: 10px clamp(20px, 10%, 3em);
-    overflow: visible;
-    word-wrap: break-word;
-    white-space: nowrap;
-}
-
-.price{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0 2em;
-}
-
 .message{
     background-color: var(--msg-bg-color);
     color: var(--msg-color);
@@ -109,7 +67,7 @@
     margin: 0;
 }
 
-.order{
+.confirm{
     visibility: var(--hidden);
     font-size: 25px;
     height: 50px;
@@ -127,7 +85,7 @@
     box-shadow: 0px 2px 10px gray ;
 }
 
-.order:hover{
+.confirm:hover{
     border-color: gray;
     border-width: 2px;
     background-color: rgb(243, 121, 76);
@@ -135,7 +93,7 @@
     transition: .1s;
 }
 
-.order:active{
+.confirm:active{
     border-color: gray;
     border-width: 2px;
     background-color: rgb(235, 94, 43);
@@ -143,7 +101,50 @@
     transition: .1s;
 }
 
-@media (max-width:500px), (max-height:450px)  {
+.confirm:disabled{
+    background-color: rgb(164, 132, 120);
+    border-color: black;
+    border-width: 0px;
+    box-shadow: 0px 0px 0px gray;
+    transition: .1s;
+}
+
+.editor{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.editor input{
+    width: 300px;
+    font-size: large;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.editor select{
+    font-size: large;
+    border-radius: 5px;
+    height: 30px;
+}
+
+@media (max-width:900px)  {
+    .editor input{
+        width: 100%;
+    }
+}
+
+@media (min-width:900px) {
+    
+    .editor{
+        width: fit-content;
+    }
+}
+
+@media (max-width:600px), (max-height:450px)  {
     .container{
         height: 95%;
         width: 90%;

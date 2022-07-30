@@ -1,0 +1,77 @@
+.container{
+    margin: 1em 0;
+    padding:10px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    height: 200px;
+    margin: 1rem 0;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+.container > img{
+    height: 80%;
+}
+#edit{
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#edit > img{
+    height: 40px;
+    width: 40px;
+}
+
+.container .right{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+@media screen and (max-width:700px) {
+    .buy{
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 80%;
+    }
+    
+    .text > h2{
+        text-align: center;
+    }
+
+    .buy p{
+        margin: 10px 0;
+        font-size: xx-large;
+    }
+    
+    .buy button{
+        width: 100%;
+        height: max(35px,6vw);
+    }
+
+    .container > img{
+        height: 60%;
+        margin-top: 10px !important;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .container{
+        height: auto;
+        flex-direction: column;
+        justify-content: end;
+    }
+    .container > img{
+        height: auto;
+        width: auto;
+        max-width: 90%;
+    }
+    #edit{
+        margin-left: auto;
+        margin-right: 1em;
+    }
+}

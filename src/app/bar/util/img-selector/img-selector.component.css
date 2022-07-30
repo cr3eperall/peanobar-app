@@ -1,0 +1,214 @@
+.outside{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.outside .imgContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    margin: 0 1em;
+}
+
+.imgContainer img{
+    max-width: 95%;
+    max-height: 95%;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    backdrop-filter: brightness(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 60vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px 50px 5px gray ;
+    padding: 10px;
+    align-items: center;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.top h2{
+    margin: auto;
+    padding-left: 30px;
+}
+
+.x{
+    height: 30px;
+    width: 30px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 0;
+    background-color: transparent;
+    border-width: 0;
+    cursor: pointer;
+}
+.x > img{
+    height: 100%;
+}
+
+.fill{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+}
+.fill::-webkit-scrollbar {
+    display: none;
+}
+
+.images{
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    width: 99%;
+    gap: 1px;
+    height: fit-content;
+}
+
+.images .imgContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;    
+    margin: 0;
+    border: 2px solid black;
+}
+.images .select{
+    appearance: none;
+    margin:0px;
+    position: absolute;
+    content: " ";
+    top: 3px;
+    right: 3px;
+    height: 20%;
+    width: 20%;
+}
+
+.images .select:checked{
+    background-color: dodgerblue;
+    clip-path: polygon(20.07% 43.28%, 44.97% 60.76%, 78.01% 13.71%, 89.76% 21.96%, 48.21% 81.13%, 11.56% 55.4%);
+    border-style: solid;
+    border-width: 0px;
+}
+
+#newImage{display: none;}
+
+.newImageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+}
+
+.newImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.newImage img{
+    height: 40px;
+    transform: rotate(45deg);
+}
+
+.newImage img:active{
+    transition-duration: .1s;
+    transform: rotate(45deg) scale(0.9);
+}
+
+.message{
+    background-color: var(--msg-bg-color);
+    color: var(--msg-color);
+    border-radius: 10px;
+    padding:10px;
+    margin: 0;
+}
+
+.confirm{
+    visibility: var(--hidden);
+    font-size: 25px;
+    height: 50px;
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+    color: black;
+    padding: 0;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: coral;
+    transition: .1s;
+    box-shadow: 0px 2px 10px gray ;
+}
+
+.confirm:hover{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(243, 121, 76);
+    box-shadow: 0px 0px 10px gray ;
+    transition: .1s;
+}
+
+.confirm:active{
+    border-color: gray;
+    border-width: 2px;
+    background-color: rgb(235, 94, 43);
+    box-shadow: 0px 0px 0px gray ;
+    transition: .1s;
+}
+
+.confirm:disabled{
+    background-color: rgb(164, 132, 120);
+    border-color: black;
+    border-width: 0px;
+    box-shadow: 0px 0px 0px gray;
+    transition: .1s;
+}
+
+@media (max-width:600px), (max-height:450px)  {
+    .container{
+        height: 95%;
+        width: 90%;
+        box-shadow: 5px 5px 50px 10px black ;
+    }
+}
