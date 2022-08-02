@@ -7,5 +7,5 @@
 <div class="container" *ngIf="scanSuccess">
     <div class="inp"><input type="number" name="recharge" id="recharge" [(ngModel)]="recharge" (input)="check()"> €</div>
     <h2>{{message}}</h2>
-    <button class="confirm" (click)="confirm()">Recharge</button>
+    <button class="confirm" (click)="confirm()" i18n>Recharge</button>
 </div>

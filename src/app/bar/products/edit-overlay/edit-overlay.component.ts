@@ -31,6 +31,13 @@ export class EditOverlayComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  localize(mode :"Add"|"Edit"):string{
+    if (mode=='Add') {
+      return ($localize `Add`)
+    }else{
+      return ($localize `Edit`)
+    }
+  }
   
   public get product() : ProductDTO|undefined {
     return this._product;
@@ -63,7 +70,7 @@ export class EditOverlayComponent implements OnInit {
     if (this.modelProduct?.cost!=null) {
       const cost:number=Math.floor(Number.parseFloat(this.modelProduct!.cost)*100)
       if (cost<1) {
-        this.message="the cost must be greater then 0.01€";
+        this.message=$localize `the cost must be greater then 0.01€`;
         return false;
       }else{
         this.message="";
@@ -110,7 +117,7 @@ export class EditOverlayComponent implements OnInit {
   update(){
     const editedProduct=this.getEditedProduct();
     if (editedProduct.cost<1) {
-      this.message="the cost must be greater then 0.01€";
+      this.message=$localize `the cost must be greater then 0.01€`;
       return;
     }
     this.message="";

@@ -128,7 +128,6 @@
 .editor select{
     font-size: large;
     border-radius: 5px;
-    height: 30px;
 }
 
 @media (max-width:900px)  {

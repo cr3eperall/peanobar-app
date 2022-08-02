@@ -1,3 +1,6 @@
+:host{
+    height: fit-content;
+}
 .container{
     height: fit-content;
     background-color: hsl(0, 0%, 90%);

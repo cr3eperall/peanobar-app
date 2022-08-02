@@ -1,5 +1,5 @@
 <div class="outside">
-    <button (click)="open=true">Select Image</button>
+    <button (click)="open=true" i18n>Select Image</button>
     <div class="imgContainer"><img *ngIf="selectedImg!=undefined && getImg(selectedImg!)!=undefined" [src]="getImg(selectedImg!)!.url" alt=""></div>
 </div>
 <div *ngIf="open" class="overlay">

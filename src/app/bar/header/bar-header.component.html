@@ -3,10 +3,10 @@
         <a routerLink="home">
             <h1 class="title">PEANO BAR</h1>
         </a>
-        <a routerLink="products">Products</a>
+        <a i18n routerLink="products">Products</a>
     </div>
     <div class="right">
-        <a routerLink="recharge">Rercharge</a>
+        <a i18n routerLink="recharge">Rercharge</a>
         <a *ngIf="router.url !== '/login'&&router.url !== '/'" href="logout"><img src="assets/logout2.png" alt="Logout" i18n-alt height="30px"></a>
     </div>
 </div>

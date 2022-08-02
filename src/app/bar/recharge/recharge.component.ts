@@ -40,7 +40,7 @@ export class RechargeComponent implements OnInit {
     if (this.recharge!=null) {
       const cost:number=Math.floor(Number.parseFloat(this.recharge)*100)
       if (cost<1) {
-        this.message="The cost must be greater then 0.01€";
+        this.message=$localize `The cost must be greater then 0.01€`;
         return false;
       }else{
         this.message="";

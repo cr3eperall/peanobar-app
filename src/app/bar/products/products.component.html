@@ -1,6 +1,6 @@
 <div class="container">
     <div class="menu">
-        <button (click)="onAdd()">Add new Product</button>
+        <button (click)="onAdd()" i18n>Add new Product</button>
     </div>
     <div class="all">
         <app-product *ngFor="let product of products" [product]="product" (edit)="onEdit(product)"></app-product>

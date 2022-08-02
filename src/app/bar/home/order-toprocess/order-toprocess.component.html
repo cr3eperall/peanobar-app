@@ -2,12 +2,12 @@
     <div class="row">
         <input type="checkbox" name="completed" id="completed" (input)="completed($event)" />
         <div class="owner">
-            <h3 *ngIf="type=='user'">User: {{ user!.fullName }}</h3>
-            <h3>CLassroom: {{ user!.classroom }}</h3>
+            <h3 i18n *ngIf="type=='user'">User: {{ user!.fullName }}</h3>
+            <h3 i18n>CLassroom: {{ user!.classroom }}</h3>
         </div>
         <div class="order-details">
-            <h3>Items: {{ countItems() }}</h3>
-            <h3>Total: {{ (order!.total / 100).toFixed(2) }}€</h3>
+            <h3 i18n>Items: {{ countItems() }}</h3>
+            <h3 i18n>Total: {{ (order!.total / 100).toFixed(2) }}€</h3>
         </div>
         <div class="extended" (click)="toggleExpansion($event)" [ngClass]="expanded ? 'ext' : ''" [attr.aria-expanded]="expanded">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"

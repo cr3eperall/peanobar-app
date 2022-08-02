@@ -1,12 +1,12 @@
 <div class="container">
     <div class="menu">
-        <h3>Order by:</h3>
+        <h3 i18n>Order by:</h3>
         <input type="radio" name="menu" id="byorder" value="byorder" checked="true" (change)="onChange($event)">
-        <label for="byorder">Order</label>
+        <label for="byorder" i18n>Order</label>
         <input type="radio" name="menu" id="byproduct" value="byproduct" (change)="onChange($event)">
-        <label for="byproduct">Product</label>
+        <label for="byproduct" i18n>Product</label>
         <input type="radio" name="menu" id="byclass" value="byclass" (change)="onChange($event)">
-        <label for="byclass">Classroom</label>
+        <label for="byclass" i18n>Classroom</label>
     </div>
     <div class="byorder" *ngIf="sorting=='byorder'">
         <app-order-toprocess *ngFor="let order of orders" [order]="order" (selectionChanged)="onSelect($event)"></app-order-toprocess>
@@ -26,6 +26,6 @@
     </div>
 </div>
 <div *ngIf="sorting!='byproduct'" class="complete-order">
-    <button [disabled]="isDisabled()" (click)="onOpen()">Mark as Completed</button>
+    <button [disabled]="isDisabled()" (click)="onOpen()" i18n>Mark as Completed</button>
 </div>
 <app-complete-overlay *ngIf="overlayVisible" [orders]="completedOrders" (completed)="onComplete()" (closed)="onClose()"></app-complete-overlay>

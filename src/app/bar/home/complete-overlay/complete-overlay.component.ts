@@ -47,7 +47,7 @@ export class CompleteOverlayComponent implements OnInit {
     this.completed.emit();
     this.messageBg="green";
     this.messageColor="black";
-    this.message="marking as completed";
+    this.message=$localize `marking as completed`;
   }
 
 }

@@ -1,7 +1,331 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="6707361102856436710" datatype="html">
+        <source>Products</source>
+        <target>Prodotti</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/header/bar-header.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6029919784151512612" datatype="html">
+        <source>Rercharge</source>
+        <target>Ricarica</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/header/bar-header.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <target>Esci</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/header/bar-header.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/header/user-header.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7243835615459711899" datatype="html">
+        <source>Products to Complete</source>
+        <target>prodotti da Completare</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/complete-overlay/complete-overlay.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="202442244688100878" datatype="html">
+        <source>close</source>
+        <target>chiudi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/complete-overlay/complete-overlay.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/util/img-selector/img-selector.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/account/user-order-list/account-order-overlay/account-order-overlay.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/home/quantity-selector-overlay/quantity-selector-overlay.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/product/product.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8384225360105280028" datatype="html">
+        <source>Complete</source>
+        <target>Completa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/complete-overlay/complete-overlay.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8398294735253032711" datatype="html">
+        <source>marking as completed</source>
+        <target>segna come completato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/complete-overlay/complete-overlay.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5699145685407908851" datatype="html">
+        <source>Order by:</source>
+        <target>Ordina per:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="220550782947016929" datatype="html">
+        <source>Order</source>
+        <target>Ordine</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/home.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/cart/cart.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7616770651914901276" datatype="html">
+        <source>Product</source>
+        <target>Prodotto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/home.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3244881935744459570" datatype="html">
+        <source>Classroom</source>
+        <target>Classe</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/home.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1178631337381475332" datatype="html">
+        <source>Mark as Completed</source>
+        <target>Segna come Completato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/home.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8195761769675438045" datatype="html">
+        <source>User: <x id="INTERPOLATION" equiv-text="{{ user!.fullName }}"/></source>
+        <source>Utente: <x id="INTERPOLATION" equiv-text="{{ user!.fullName }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1254929348708563699" datatype="html">
+        <source>CLassroom: <x id="INTERPOLATION" equiv-text="{{ user!.classroom }}"/></source>
+        <source>CLasse: <x id="INTERPOLATION" equiv-text="{{ user!.classroom }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6786063285214569428" datatype="html">
+        <source>Items: <x id="INTERPOLATION" equiv-text="{{ countItems() }}"/></source>
+        <source>Prodotti: <x id="INTERPOLATION" equiv-text="{{ countItems() }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2557835777128348434" datatype="html">
+        <source>Total: <x id="INTERPOLATION" equiv-text="{{ (order!.total / 100).toFixed(2) }}"/>€</source>
+        <source>Totale: <x id="INTERPOLATION" equiv-text="{{ (order!.total / 100).toFixed(2) }}"/>€</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/account/user-order-list/account-order-overlay/account-order-overlay.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/cart/cart.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/home/quantity-selector-overlay/quantity-selector-overlay.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5217125027837157611" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{localize(mode)}}"/> Product</source>
+        <source><x id="INTERPOLATION" equiv-text="{{localize(mode)}}"/> Prodotto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="648706375520546657" datatype="html">
+        <source>Product Name:</source>
+        <target>Nome del Prodotto:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3340177897711414304" datatype="html">
+        <source>Cost:</source>
+        <target>Prezzo:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2736556170366900089" datatype="html">
+        <source>Type:</source>
+        <target>Tipo:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3711889941704624217" datatype="html">
+        <source>Image:</source>
+        <target>Immagine:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9178182467454450952" datatype="html">
+        <source>Confirm</source>
+        <target>Conferma</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3249513483374643425" datatype="html">
+        <source>Add</source>
+        <target>Aggiungi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7585826646011739428" datatype="html">
+        <source>Edit</source>
+        <target>Modifica</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8044015461144622673" datatype="html">
+        <source>the cost must be greater then 0.01€</source>
+        <target>Il prezzo deve essere maggiore di 0.01€</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5722235063735091336" datatype="html">
+        <source>Name: <x id="INTERPOLATION" equiv-text="{{product.name}}"/></source>
+        <source>Nome: <x id="INTERPOLATION" equiv-text="{{product.name}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/product/product.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6663387285931727740" datatype="html">
+        <source>Cost: <x id="INTERPOLATION" equiv-text="{{(product.cost/100).toFixed(2)}}"/>€</source>
+        <source>Prezzo: <x id="INTERPOLATION" equiv-text="{{(product.cost/100).toFixed(2)}}"/>€</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/product/product.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8518958070193835562" datatype="html">
+        <source>Type: <x id="INTERPOLATION" equiv-text="{{product.type}}"/></source>
+        <source>Tipo: <x id="INTERPOLATION" equiv-text="{{product.type}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/product/product.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4213600943942854610" datatype="html">
+        <source>Add new Product</source>
+        <target>Nuovo Prodotto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/products/products.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8729513055451382632" datatype="html">
+        <source>Recharge</source>
+        <target>Ricarica</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/recharge/recharge.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3589621674986681682" datatype="html">
+        <source>The cost must be greater then 0.01€</source>
+        <target>Il prezzo deve essere maggiore di 0.01€</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/recharge/recharge.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3629762945086887266" datatype="html">
+        <source>Select Image</source>
+        <target>Seleziona Immagine</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/util/img-selector/img-selector.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797570084942068182" datatype="html">
+        <source>Select</source>
+        <target>Seleziona</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bar/util/img-selector/img-selector.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7840715695767593399" datatype="html">
         <source>password forgot</source>
         <target>password dimenticata</target>
@@ -23,23 +347,23 @@
         <target>Credenziali sbagliate</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/login/login.component.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6515813282872727426" datatype="html">
         <source>Login success</source>
-        <target>Credenziali corrette</target>
+        <target>Accesso effettuato</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/login/login.component.ts</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8886509873147904992" datatype="html">
         <source>Already logged in</source>
-        <target>Accesso già eseguito</target>
+        <target>Accesso già effettuato</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/login/login.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6010607691557976072" datatype="html">
@@ -47,74 +371,42 @@
         <target>Sessione scaduta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/login/login.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8243960984734382632" datatype="html">
         <source>User logout</source>
-        <target>Logout utente</target>
+        <target>Esci</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/logout/logout.component.html</context>
           <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="202442244688100878" datatype="html">
-        <source>close</source>
-        <target>chiudi</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/product/product.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/account-order-overlay/account-order-overlay.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/home/quantity-selector-overlay/quantity-selector-overlay.component.html</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1358803443456357055" datatype="html">
-        <source>Add to Cart</source>
-        <target>Aggiungi al carrello</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/product/product.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/home/quantity-selector-overlay/quantity-selector-overlay.component.html</context>
-          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6309828574111583895" datatype="html">
         <source>Change password</source>
         <target>Cambia password</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2397816345463091163" datatype="html">
         <source>Old Password</source>
-        <target>Vecchia Password</target>
+        <target>Vecchia password</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3241357959735682038" datatype="html">
         <source>Confirm Password</source>
-        <target>Conferma Password</target>
+        <target>Conferma password</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
@@ -122,55 +414,30 @@
         <source>Old orders</source>
         <target>Ordini passati</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6451269955734195952" datatype="html">
         <source>Passwords do not match</source>
-        <target>Le password non corrispondono</target>
+        <target>Le Password non corrispondono</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.ts</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8954162707543753079" datatype="html">
         <source>Passwords too short</source>
         <target>Password troppo corta</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/account.component.ts</context>
-          <context context-type="linenumber">55</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2557835777128348434" datatype="html">
-        <source>Total: <x id="INTERPOLATION" equiv-text="{{(order.total/100).toFixed(2)}}"/>€</source>
-        <target>Totale: <x id="INTERPOLATION" equiv-text="{{(order.total/100).toFixed(2)}}"/>€</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/account-order-overlay/account-order-overlay.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/cart.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/home/quantity-selector-overlay/quantity-selector-overlay.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="sourcefile">src/app/user/account/account.component.ts</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4452427314943113135" datatype="html">
         <source>Previous</source>
-        <target>Precedente</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -178,7 +445,7 @@
         <source>Next</source>
         <target>Successivo</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
@@ -186,23 +453,23 @@
         <source>Details</source>
         <target>Dettagli</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.html</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1780950485960518731" datatype="html">
         <source>In Progress</source>
-        <target>In Corso</target>
+        <target>In corso</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.ts</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6891960857342060305" datatype="html">
         <source>In Cart</source>
-        <target>Nel Carrello</target>
+        <target>Nel carrello</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.ts</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.ts</context>
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
@@ -210,7 +477,7 @@
         <source>Completed</source>
         <target>Completato</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.ts</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.ts</context>
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
@@ -218,35 +485,23 @@
         <source>undefined</source>
         <target>indefinito</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/account/user-order-list/user-order-list.component.ts</context>
+          <context context-type="sourcefile">src/app/user/account/user-order-list/user-order-list.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1686266035650084795" datatype="html">
         <source>Cart is empty</source>
-        <target>Il carrello è vuoto</target>
+        <target>Il Carrello è vuoto</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/cart.component.html</context>
+          <context context-type="sourcefile">src/app/user/cart/cart.component.html</context>
           <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="220550782947016929" datatype="html">
-        <source>Order</source>
-        <target>Ordina</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/cart.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.html</context>
-          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="524808212283075172" datatype="html">
         <source>Order Recipit</source>
         <target>Riassunto Ordine</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.html</context>
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -254,11 +509,11 @@
         <source>Order Sent</source>
         <target>Ordine Inviato</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.ts</context>
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.ts</context>
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.ts</context>
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
@@ -266,7 +521,7 @@
         <source>Not enough balance</source>
         <target>Credito insufficiente</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.ts</context>
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.ts</context>
           <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
@@ -274,7 +529,7 @@
         <source>Error</source>
         <target>Errore</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/cart/order-overlay/order-overlay.component.ts</context>
+          <context context-type="sourcefile">src/app/user/cart/order-overlay/order-overlay.component.ts</context>
           <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
@@ -282,24 +537,28 @@
         <source>Cart</source>
         <target>Carrello</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/user/header/user-header.component.html</context>
           <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3797778920049399855" datatype="html">
-        <source>Logout</source>
-        <target>Esci</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/header/header.component.html</context>
-          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4894242618362767605" datatype="html">
         <source>balance:</source>
         <target>credito:</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/user/header/header.component.html</context>
+          <context context-type="sourcefile">src/app/user/header/user-header.component.html</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1358803443456357055" datatype="html">
+        <source>Add to Cart</source>
+        <target>Aggiungi al carrello</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/home/quantity-selector-overlay/quantity-selector-overlay.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/product/product.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
     </body>
