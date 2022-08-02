@@ -3,7 +3,7 @@
         <input type="checkbox" name="completed" id="completed" (input)="completed($event)" />
         <div class="owner">
             <h3 i18n *ngIf="type=='user'">User: {{ user!.fullName }}</h3>
-            <h3 i18n>CLassroom: {{ user!.classroom }}</h3>
+            <h3 i18n>Classroom: {{ user!.classroom }}</h3>
         </div>
         <div class="order-details">
             <h3 i18n>Items: {{ countItems() }}</h3>

@@ -136,15 +136,15 @@
       </trans-unit>
       <trans-unit id="8195761769675438045" datatype="html">
         <source>User: <x id="INTERPOLATION" equiv-text="{{ user!.fullName }}"/></source>
-        <source>Utente: <x id="INTERPOLATION" equiv-text="{{ user!.fullName }}"/></source>
+        <target>Utente: <x id="INTERPOLATION" equiv-text="{{ user!.fullName }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1254929348708563699" datatype="html">
-        <source>CLassroom: <x id="INTERPOLATION" equiv-text="{{ user!.classroom }}"/></source>
-        <source>CLasse: <x id="INTERPOLATION" equiv-text="{{ user!.classroom }}"/></source>
+      <trans-unit id="6983374292963691717" datatype="html">
+        <source>Classroom: <x id="INTERPOLATION" equiv-text="{{ user!.classroom }}"/></source>
+        <target>Classe: <x id="INTERPOLATION" equiv-text="{{ user!.classroom }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
           <context context-type="linenumber">6</context>
@@ -152,7 +152,7 @@
       </trans-unit>
       <trans-unit id="6786063285214569428" datatype="html">
         <source>Items: <x id="INTERPOLATION" equiv-text="{{ countItems() }}"/></source>
-        <source>Prodotti: <x id="INTERPOLATION" equiv-text="{{ countItems() }}"/></source>
+        <target>Prodotti: <x id="INTERPOLATION" equiv-text="{{ countItems() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
           <context context-type="linenumber">9</context>
@@ -160,7 +160,7 @@
       </trans-unit>
       <trans-unit id="2557835777128348434" datatype="html">
         <source>Total: <x id="INTERPOLATION" equiv-text="{{ (order!.total / 100).toFixed(2) }}"/>€</source>
-        <source>Totale: <x id="INTERPOLATION" equiv-text="{{ (order!.total / 100).toFixed(2) }}"/>€</source>
+        <target>Totale: <x id="INTERPOLATION" equiv-text="{{ (order!.total / 100).toFixed(2) }}"/>€</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/home/order-toprocess/order-toprocess.component.html</context>
           <context context-type="linenumber">10</context>
@@ -188,7 +188,7 @@
       </trans-unit>
       <trans-unit id="5217125027837157611" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{localize(mode)}}"/> Product</source>
-        <source><x id="INTERPOLATION" equiv-text="{{localize(mode)}}"/> Prodotto</source>
+        <target><x id="INTERPOLATION" equiv-text="{{localize(mode)}}"/> Prodotto</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/products/edit-overlay/edit-overlay.component.html</context>
           <context context-type="linenumber">4</context>
@@ -264,7 +264,7 @@
       </trans-unit>
       <trans-unit id="5722235063735091336" datatype="html">
         <source>Name: <x id="INTERPOLATION" equiv-text="{{product.name}}"/></source>
-        <source>Nome: <x id="INTERPOLATION" equiv-text="{{product.name}}"/></source>
+        <target>Nome: <x id="INTERPOLATION" equiv-text="{{product.name}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/products/product/product.component.html</context>
           <context context-type="linenumber">5</context>
@@ -272,7 +272,7 @@
       </trans-unit>
       <trans-unit id="6663387285931727740" datatype="html">
         <source>Cost: <x id="INTERPOLATION" equiv-text="{{(product.cost/100).toFixed(2)}}"/>€</source>
-        <source>Prezzo: <x id="INTERPOLATION" equiv-text="{{(product.cost/100).toFixed(2)}}"/>€</source>
+        <target>Prezzo: <x id="INTERPOLATION" equiv-text="{{(product.cost/100).toFixed(2)}}"/>€</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/products/product/product.component.html</context>
           <context context-type="linenumber">6</context>
@@ -280,7 +280,7 @@
       </trans-unit>
       <trans-unit id="8518958070193835562" datatype="html">
         <source>Type: <x id="INTERPOLATION" equiv-text="{{product.type}}"/></source>
-        <source>Tipo: <x id="INTERPOLATION" equiv-text="{{product.type}}"/></source>
+        <target>Tipo: <x id="INTERPOLATION" equiv-text="{{product.type}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/bar/products/product/product.component.html</context>
           <context context-type="linenumber">7</context>
