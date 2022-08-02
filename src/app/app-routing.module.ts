@@ -1,3 +1,4 @@
+import { LoginService } from './services/login.service';
 import { BarHeaderComponent } from './bar/header/bar-header.component';
 import { HomeComponent as BarHomeComponent} from './bar/home/home.component';
 import { UserHeaderComponent } from './user/header/user-header.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: "logout",component:LogoutComponent},
   //TODO add canActivate Guards
   {path: "",loadChildren: ()=>import( /* webpackChunkName: "UserModule" */'./user/user.module').then(m=>m.UserModule)},
-  {path: "bar",loadChildren: ()=>import( /* webpackChunkName: "BarModule" */'./bar/bar.module').then(m=>m.BarModule)}
+  {path: "bar",loadChildren: ()=>import( /* webpackChunkName: "BarModule" */'./bar/bar.module').then(m=>m.BarModule),canActivate:[LoginService]}
 ];
 
 @NgModule({

@@ -25,4 +25,19 @@ export class UserService {
     }
   }
 
+  getUserUncached(uuid:string):Observable<UserDTO>{
+      const headers=this.loginService.getHeaders();
+      const user=this.http.get<UserDTO>(this.apiUrl+"/user/byuuid?uuid="+uuid,{headers}).pipe(shareReplay(1));
+      this.userCache.set(uuid,user);
+      return user;
+  }
+
+  updateBalance(uuid:string,balance:number){
+    const data=new FormData();
+    data.append("uuid",uuid);
+    data.append("bal",balance.toString());
+    const headers=this.loginService.getHeaders();
+    return this.http.post<UserDTO>(this.apiUrl+"/user/balance",data,{headers});
+  }
+
 }

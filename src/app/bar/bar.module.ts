@@ -10,6 +10,8 @@ import { ProductsComponent } from './products/products.component';
 import { EditOverlayComponent } from './products/edit-overlay/edit-overlay.component';
 import { ProductComponent } from './products/product/product.component';
 import { ImgSelectorComponent } from './util/img-selector/img-selector.component';
+import { RechargeComponent } from './recharge/recharge.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 
 
@@ -22,12 +24,14 @@ import { ImgSelectorComponent } from './util/img-selector/img-selector.component
     ProductsComponent,
     EditOverlayComponent,
     ProductComponent,
-    ImgSelectorComponent
+    ImgSelectorComponent,
+    RechargeComponent
   ],
   imports: [
     BarRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    ZXingScannerModule
   ]
 })
 export class BarModule { }

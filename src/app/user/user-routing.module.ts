@@ -6,14 +6,15 @@ import { UserHeaderComponent } from './header/user-header.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { LoginService } from '../services/login.service';
 
 const routes: Routes = [
     {path:"",component:UserHeaderComponent,children:[
         {path:"",component:LoginComponent},
-        {path:"home",component:HomeComponent},
-        {path: "cart",component:CartComponent},
-        {path: "qr",component:QrcodeComponent},
-        {path: "account",component:AccountComponent}
+        {path:"home",component:HomeComponent,canActivate:[LoginService]},
+        {path: "cart",component:CartComponent,canActivate:[LoginService]},
+        {path: "qr",component:QrcodeComponent,canActivate:[LoginService]},
+        {path: "account",component:AccountComponent,canActivate:[LoginService]}
     ]}
 ];
 

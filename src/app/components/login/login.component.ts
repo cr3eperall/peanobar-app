@@ -35,6 +35,27 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  redirect(){
+    this.loginService.getUser().subscribe((value)=>{
+      
+      switch (value.role.id) {
+        case 1:
+          this.router.navigate(["home"], {relativeTo:this.route.root});
+          break;
+        case 2:
+          this.router.navigate(["bar/home"], {relativeTo:this.route.root});
+          break;
+        case 3:
+          this.router.navigate(["bar/home"], {relativeTo:this.route.root});
+          break;
+        default:
+          this.router.navigate(["home"], {relativeTo:this.route.root});
+          break;
+      }
+    })
+    
+  }
+
   setMessage(type:number){
     switch (type) {
       case 0:
@@ -48,17 +69,14 @@ export class LoginComponent implements OnInit {
         this.messageVisibility="visible";
         this.color="rgb(4, 238, 4)";
         this.borderColor="rgb(0, 255, 0)";
-        
-        //redirect to homepage for role
-        this.router.navigate(["home"], {relativeTo:this.route});
+        this.redirect();
         break;
       case 2:
         this.loginSucc=$localize `Already logged in`;
         this.messageVisibility="visible";
         this.color="rgb(38, 67, 189)";
         this.borderColor="rgb(0, 0, 255)";
-        //redirect to homepage for role
-        this.router.navigate(["home"], {relativeTo:this.route});
+        this.redirect();
         break;
       case 3:
         this.loginSucc=$localize `Session expired`;

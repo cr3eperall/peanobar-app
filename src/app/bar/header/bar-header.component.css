@@ -47,6 +47,10 @@ a{
     font-family: sans-serif;
 }
 
+.right a img{
+    filter: invert();
+}
+
 @media screen and (max-width:600px) {
     .container{
         justify-content: space-evenly;

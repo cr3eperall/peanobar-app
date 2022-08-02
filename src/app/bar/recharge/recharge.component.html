@@ -1,0 +1,11 @@
+<div class="playpause" (click)="enabled=!enabled">
+    <zxing-scanner (scanError)="onError($event)" [autostart]="!scanSuccess" [style.display]="scanSuccess ? 'none' : null" [enable]="!scanSuccess"  (autostarted)="started()" (scanSuccess)="scanned($event)" [(device)]="currentDevice" (camerasFound)="onCamerasFound($event)"></zxing-scanner>
+</div>
+<select name="cameras" id="cameras" *ngIf="cameras!=undefined &&currentDevice!=undefined" (change)="onChange($event)">
+    <option *ngFor="let camera of cameras" [value]="camera.deviceId" [selected]="camera.deviceId==currentDevice!.deviceId">{{camera.label}}</option>
+</select>
+<div class="container" *ngIf="scanSuccess">
+    <div class="inp"><input type="number" name="recharge" id="recharge" [(ngModel)]="recharge" (input)="check()"> €</div>
+    <h2>{{message}}</h2>
+    <button class="confirm" (click)="confirm()">Recharge</button>
+</div>
