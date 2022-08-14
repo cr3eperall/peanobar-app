@@ -1,0 +1,14 @@
+<div *ngIf="modelClassroom!==undefined" class="overlay">
+    <div class="container">
+        <div class="top">
+            <h2 i18n>Update Classroom</h2>
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
+        </div>
+        <div class="editor">
+            <h3 i18n>Classroom:</h3>
+            <input type="text" name="classroom" id="classroom" [(ngModel)]="modelClassroom">
+        </div>
+        <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
+        <button *ngIf="modelClassroom!==undefined" [disabled]="isDisabled()" class="confirm" (click)="update()" i18n>Confirm</button>
+    </div>
+</div>

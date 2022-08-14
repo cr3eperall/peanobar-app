@@ -24,7 +24,6 @@ export class EditOverlayComponent implements OnInit {
   closed=new EventEmitter();
   @Output()
   updated=new EventEmitter<{product:ProductDTO,mode?:"Add"|"Edit"}>();
-  buttonDisabled=true
 
   constructor() { }
 

@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
 
   redirect(){
     this.loginService.getUser().subscribe((value)=>{
-      
       switch (value.role.id) {
         case 1:
           this.router.navigate(["home"], {relativeTo:this.route.root});
@@ -46,7 +45,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["bar/home"], {relativeTo:this.route.root});
           break;
         case 3:
-          this.router.navigate(["bar/home"], {relativeTo:this.route.root});
+          this.router.navigate(["admin/home"], {relativeTo:this.route.root});
           break;
         default:
           this.router.navigate(["home"], {relativeTo:this.route.root});

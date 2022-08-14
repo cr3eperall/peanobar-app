@@ -1,0 +1,30 @@
+<div *ngIf="modelAccount!==undefined" class="overlay">
+    <div class="container">
+        <div class="top">
+            <h2 i18n>{{mode=='edit' ? ("Edit "+account!.username) : ("Add Account")}}</h2>
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
+        </div>
+        <div class="editor">
+            <h3 i18n>Full Name:</h3>
+            <input type="text" name="name" id="name" [(ngModel)]="modelAccount!.fullName">
+            <h3 *ngIf="mode=='add'" i18n>Username:</h3>
+            <input *ngIf="mode=='add'" type="text" name="username" id="username" [(ngModel)]="modelAccount!.username">
+            <h3 i18n>Email:</h3>
+            <input type="text" name="email" id="email" [(ngModel)]="modelAccount!.email">
+            <h3 i18n>Classroom:</h3>
+            <input type="text" name="classroom" id="classroom" [(ngModel)]="modelAccount!.classroom">
+            <h3 *ngIf="mode=='edit'" i18n>Balance:</h3>
+            <div *ngIf="mode=='edit'" class="bal"><input type="number" name="recharge" id="recharge" [(ngModel)]="balance" (input)="checkBal()"> €</div>
+            <h3 *ngIf="mode=='add'" i18n>Role:</h3>
+            <select *ngIf="mode=='add'" name="role" id="role" [(ngModel)]="modelAccount!.role.id">
+                <option value="1">User</option>
+                <option value="2">Bar</option>
+                <option value="3">Admin</option>
+            </select>
+            <h3 *ngIf="mode=='add'" i18n>Password:</h3>
+            <input *ngIf="mode=='add'" type="text" name="name" id="name" [(ngModel)]="password">
+        </div>
+        <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
+        <button *ngIf="account!==undefined" [disabled]="isDisabled()" class="confirm" (click)="update()" i18n>Confirm</button>
+    </div>
+</div>

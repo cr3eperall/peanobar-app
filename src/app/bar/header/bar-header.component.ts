@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarHeaderComponent implements OnInit {
 
-  constructor(public router:Router, private loginService:LoginService) { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }

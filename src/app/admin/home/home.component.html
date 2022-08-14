@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="menu">
+        <h3 i18n>Mode:</h3>
+        <input type="radio" name="menu" id="account" value="account" checked="true" (change)="onChange($event)">
+        <label for="account">Account</label>
+        <input type="radio" name="menu" id="classroom" value="classroom" (change)="onChange($event)">
+        <label for="classroom">Classroom</label>
+        
+        <input type="text" name="search" id="search" placeholder="search" [(ngModel)]="searchModel" (keyup.enter)="onSearch()">
+    </div>
+    <div class="accounts" [hidden]="users==undefined || mode!='account'">
+        <div class="add">
+            <button (click)="onOpenAddAccount()" i18n>Add new Account</button>
+        </div>
+        <app-account *ngFor="let user of users" [user]="user" (edit)="openAccountEditor($event)"></app-account>
+    </div>
+    <div class="classrooms" [hidden]="classrooms==undefined || mode!='classroom'">
+        <app-classroom *ngFor="let classroom of classrooms" [classroom]="classroom" (editAccount)="openAccountEditor($event)" (editClassroom)="openClassroomEditor($event)"></app-classroom>
+        <app-classroom-edit-overlay [classroom]="classroomToEdit" (closed)="onClosedClassroomEditor()" (updated)="onClassroomEdited($event)"></app-classroom-edit-overlay>
+    </div>
+    <app-account-edit-overlay [account]="accountToEdit" (closed)="onClosedAccountEditor()" (updated)="onAccountEdited($event)"></app-account-edit-overlay>
+</div>

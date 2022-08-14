@@ -1,0 +1,17 @@
+<div class="container" *ngIf="users!=undefined">
+    <div class="row">
+        <button id="edit" (click)="edit()"><img src="assets/edit2.png" alt="Edit"></button>
+        <h2>Room: {{classroom!}}</h2>
+        <h3>Users: {{users!.length}}</h3>
+        <div class="extended" (click)="toggleExpansion($event)" [ngClass]="expanded ? 'ext' : ''" [attr.aria-expanded]="expanded">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                 viewBox="0 0 16 16">
+                <path fill-rule="evenodd" stroke="black" stroke-width="0.5"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+        </div>
+    </div>
+    <div *ngIf="expanded" class="accounts">
+        <app-account *ngFor="let account of users!" [user]="account" (edit)="onEditAccount($event)"></app-account>
+    </div>
+</div>

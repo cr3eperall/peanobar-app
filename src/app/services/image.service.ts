@@ -10,6 +10,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class ImageService {
   public cache=new Map<number, SafeUrl>();
+  public allCache?:{id:number, url:SafeUrl}[];
   constructor(private http:HttpClient,private loginService: LoginService,private sanitizer:DomSanitizer) { }
   apiUrl=environment.apiUrl;
 
@@ -102,6 +103,11 @@ export class ImageService {
   }
 
   getAllImages():Observable<{id:number, url:SafeUrl}[]>{
+    if (this.allCache!=undefined) {
+      return new Observable<{id:number, url:SafeUrl}[]>((subscriber)=>{
+        subscriber.next(this.allCache!);
+      });
+    }
     return this.http.get<{id:number, data:string}[]>(this.apiUrl+"/img/all",{headers:this.loginService.getHeaders()}).pipe(
       map((value)=>{
         const res:({id:number, url:SafeUrl}|undefined)[]=Array.apply(null,Array(value.length)) as ({id:number, url:SafeUrl}|undefined)[];
@@ -109,6 +115,7 @@ export class ImageService {
             const url=this.sanitizer.bypassSecurityTrustUrl("data:image/jpeg;base64,"+img.data);
             res[res.indexOf(undefined)]={id:img.id,url:url}
         }
+        this.allCache=res as {id:number, url:SafeUrl}[];
         for (const img of res) {
           this.cache.set(img!.id,img!.url)
         }

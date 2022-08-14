@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: "login",component:LoginComponent},
   {path: "logout",component:LogoutComponent},
   {path: "",loadChildren: ()=>import( /* webpackChunkName: "UserModule" */'./user/user.module').then(m=>m.UserModule)},
-  {path: "bar",loadChildren: ()=>import( /* webpackChunkName: "BarModule" */'./bar/bar.module').then(m=>m.BarModule),canActivate:[LoginService]}
+  {path: "bar",loadChildren: ()=>import( /* webpackChunkName: "BarModule" */'./bar/bar.module').then(m=>m.BarModule),canActivate:[LoginService]},
+  {path: "admin",loadChildren: ()=>import( /* webpackChunkName: "AdminModule" */'./admin/admin.module').then(m=>m.AdminModule),canActivate:[LoginService]}
 ];
 
 @NgModule({

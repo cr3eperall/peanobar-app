@@ -25,6 +25,23 @@ export class UserService {
     }
   }
 
+  getAllClassrooms():Observable<number[]>{
+    const headers=this.loginService.getHeaders();
+    return this.http.get<number[]>(this.apiUrl+"/user/classrooms",{headers});
+  }
+
+  getClassroom(classroom:number):Observable<UserDTO[]>{
+    const headers=this.loginService.getHeaders();
+    return this.http.get<UserDTO[]>(this.apiUrl+"/user/classroom?classroom="+classroom,{headers});
+  }
+
+  getAll(page:number, size:number):Observable<UserDTO[]>{
+    const headers=this.loginService.getHeaders();
+    const data=new FormData();
+    const user=this.http.get<UserDTO[]>(this.apiUrl+"/user/all?page="+page+"&size="+size,{headers});
+    return user;
+  }
+
   getUserUncached(uuid:string):Observable<UserDTO>{
       const headers=this.loginService.getHeaders();
       const user=this.http.get<UserDTO>(this.apiUrl+"/user/byuuid?uuid="+uuid,{headers}).pipe(shareReplay(1));
@@ -40,4 +57,55 @@ export class UserService {
     return this.http.post<UserDTO>(this.apiUrl+"/user/balance",data,{headers});
   }
 
+  updateUser(oldUser:UserDTO,updated:UserDTO):Observable<UserDTO>{
+    if (oldUser.uuid!=updated.uuid) {
+      throw new Error("UUIDs are different!");
+    }
+    const headers=this.loginService.getHeaders();
+    const data=new FormData();
+    data.append("uuid",oldUser.uuid);
+    if (oldUser.fullName!=updated.fullName) {
+      data.append("name",updated.fullName);
+    }
+    if (oldUser.classroom!=updated.classroom) {
+      data.append("classroom",updated.classroom.toString());
+    }
+    if (oldUser.email!=updated.email) {
+      data.append("email",updated.email);
+    }
+    return this.http.patch<UserDTO>(this.apiUrl+"/user",data,{headers});
+  }
+
+  createUser(user:UserDTO,password:string){
+    console.log("create ok");
+    const headers=this.loginService.getHeaders();
+    const data=new FormData();
+    data.append("name",user.fullName);
+    data.append("username",user.username);
+    data.append("email",user.email);
+    data.append("role_id",user.role.id.toString());
+    data.append("classroom",user.classroom.toString());
+    data.append("password",password);
+    return this.http.post<UserDTO>(this.apiUrl+"/user",data,{headers});
+  }
+
+  updateClassroom(oldC:number,newC:number){
+    const headers=this.loginService.getHeaders();
+    const data=new FormData();
+    data.append("old",oldC.toString());
+    data.append("new",newC.toString());
+    return this.http.patch<UserDTO>(this.apiUrl+"/user/classroom",data,{headers});
+  }
+
+  searchUser(by:string,mode:"fullname"|"username"):Observable<UserDTO[]>{
+    const headers=this.loginService.getHeaders();
+    let query="";
+    if (mode=="fullname") {
+      query="?fullname="+by;
+    }else if (mode=='username') {
+      query="?username="+by;
+    }
+    return this.http.get<UserDTO[]>(this.apiUrl+"/user/search"+query,{headers});
+  }
+  
 }

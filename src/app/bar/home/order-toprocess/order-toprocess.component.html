@@ -20,7 +20,7 @@
     <div *ngIf="expanded" class="order">
         <div class="item" *ngFor="let item of order!.contents">
             <h3>{{ item.product.name }}</h3>
-            <h3 id="quantityh3"><p>x</p> <p>{{ item.quantity }}</p></h3>
+            <h3 id="quantityh3">x {{ item.quantity }}</h3>
             <h3>{{(item.product.cost/100).toFixed(2)}}€</h3>
             <h3>{{(item.product.cost*item.quantity/100).toFixed(2)}}€</h3>
         </div>

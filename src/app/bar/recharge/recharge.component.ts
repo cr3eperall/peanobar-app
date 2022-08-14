@@ -68,7 +68,6 @@ export class RechargeComponent implements OnInit {
     this.userService.getUserUncached(result).subscribe({
       next:(value)=>{
         this.user=value;
-        console.log((value.balance/100).toFixed(2));
       },error:(err:HttpErrorResponse)=>{
         this.scanSuccess=false;
       }
@@ -82,10 +81,8 @@ export class RechargeComponent implements OnInit {
     if (this.check()&&this.user) {
       this.userService.getUserUncached(this.user.uuid).subscribe({
         next:(value)=>{
-          console.log("before: "+value.balance);
           const newBal=value.balance+Math.floor(Number.parseFloat(this.recharge!)*100);
           this.userService.updateBalance(value.uuid,newBal).subscribe((nvalue)=>{
-            console.log("after: "+nvalue);
             this.scanSuccess=false;
             this.user=undefined;
             this.recharge="0";

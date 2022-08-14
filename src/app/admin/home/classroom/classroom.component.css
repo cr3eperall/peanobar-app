@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: fit-content;
+    border-style: solid;
+    border-radius: 15px;
+    margin: 1em;
+    background-color: whitesmoke;
+}
+
+#edit{
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#edit > img{
+    height: 40px;
+    width: 40px;
+}
+
+.container > h2{
+    width: 70%;
+}
+
+.row{
+    width: 95%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.accounts{
+    width: 100%;
+}
+
+.extended{
+    margin:0;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-90deg);
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier();
+}
+
+.extended.ext{
+    transform: rotate(0);
+}

@@ -61,7 +61,7 @@ export class OrderOverlayComponent implements OnInit {
           this.prodHidden="hidden";
           this.bgColor="green";
           this.msgColor="black";
-          timer(1000).subscribe(()=>{this.close();});
+          timer(1000).subscribe(()=>{this.close();window.location.reload();});
         }
       },error:(err:HttpErrorResponse)=>{
         if(err.error.startsWith("Not enough balance")){
