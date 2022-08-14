@@ -107,5 +107,10 @@ export class UserService {
     }
     return this.http.get<UserDTO[]>(this.apiUrl+"/user/search"+query,{headers});
   }
+
+  countUsers():Observable<number>{
+    const headers=this.loginService.getHeaders();
+    return this.http.get<number>(this.apiUrl+"/user/count",{headers});
+  }
   
 }

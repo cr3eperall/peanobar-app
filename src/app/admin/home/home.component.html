@@ -13,6 +13,19 @@
             <button (click)="onOpenAddAccount()" i18n>Add new Account</button>
         </div>
         <app-account *ngFor="let user of users" [user]="user" (edit)="openAccountEditor($event)"></app-account>
+        <div *ngIf="searchModel===undefined||searchModel===''" class="selector">
+            <div class="page">
+                <button [disabled]="prevDisabled" (click)="pagePrev()" id="prev" i18n>Previous</button>
+                <button [disabled]="nextDisabled" (click)="pageNext()" id="next" i18n>Next</button>
+            </div>
+            <div class="size">
+                <select (change)="sizeChanged()" [(ngModel)]="size" name="size" id="size">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="classrooms" [hidden]="classrooms==undefined || mode!='classroom'">
         <app-classroom *ngFor="let classroom of classrooms" [classroom]="classroom" (editAccount)="openAccountEditor($event)" (editClassroom)="openClassroomEditor($event)"></app-classroom>

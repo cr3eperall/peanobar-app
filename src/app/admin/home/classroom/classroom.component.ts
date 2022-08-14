@@ -26,10 +26,9 @@ export class ClassroomComponent implements OnInit {
   @Input()
   public set classroom(value: number | undefined) {
     this._classroom = value;
-    if (value!==undefined) {
-      this.userService.getClassroom(this.classroom!).subscribe((value)=>{
-        this.users=value;
-      })
+    if (value===undefined) {
+      this.users=undefined;
+      this.expanded=false;
     }
   }
 
@@ -47,6 +46,11 @@ export class ClassroomComponent implements OnInit {
 
   toggleExpansion(value:Event){
     this.expanded=!this.expanded;
+    if (this.classroom!==undefined&&this.users===undefined) {
+      this.userService.getClassroom(this.classroom!).subscribe((value)=>{
+        this.users=value;
+      })
+    }
   }
 
 }

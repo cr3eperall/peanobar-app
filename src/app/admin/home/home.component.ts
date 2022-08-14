@@ -15,16 +15,53 @@ export class HomeComponent implements OnInit {
   classroomToEdit:number|undefined|null=undefined;
 
   searchModel?="";
+  prevDisabled=true;
+  nextDisabled=true;
+  size=10;
+  page=1;
+  nAccounts=0;
 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
-    this.userService.getAll(-1,-1).subscribe((value)=>{
-      this.users=value;
+    this.userService.countUsers().subscribe((value)=>{
+      this.nAccounts=value;
+      this.updatePrevNextDisabled();
     })
+    this.updateUsers();
     this.userService.getAllClassrooms().subscribe((value)=>{
       this.classrooms=value;
     })
+  }
+
+  updatePrevNextDisabled(){
+    if (this.page*+this.size>=this.nAccounts) {
+        this.nextDisabled=true;
+    }else{
+      this.nextDisabled=false;
+    }
+    if (this.page<=1) {
+      this.prevDisabled=true;
+    }else{
+      this.prevDisabled=false;
+    }
+  }
+
+  pagePrev(){
+    this.page--;
+    this.updateUsers();
+    this.updatePrevNextDisabled();
+  }
+  pageNext(){
+    this.page++;
+    this.updateUsers();
+    this.updatePrevNextDisabled();
+  }
+
+  sizeChanged(){
+    this.page=1;
+    this.updateUsers();
+    this.updatePrevNextDisabled();
   }
 
   onSearch(){
@@ -128,7 +165,7 @@ export class HomeComponent implements OnInit {
   }
 
   updateUsers(){
-    this.userService.getAll(-1,-1).subscribe((value)=>{
+    this.userService.getAll(this.page,this.size).subscribe((value)=>{
       this.users=value;
     })
   }
