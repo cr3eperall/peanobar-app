@@ -85,7 +85,7 @@ export class AccountEditOverlayComponent implements OnInit {
     if (this.recharge!=null&&this.recharge!=undefined) {
       const cost:number=Math.floor(Number.parseFloat(this.balance!)*100)
       if (cost<0) {
-        this.message=$localize `The cost must be greater then 0€`;
+        this.message=$localize `The balance must be greater then 0€`;
         return false;
       }else{
         this.message="";
