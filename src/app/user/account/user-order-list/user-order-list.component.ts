@@ -60,7 +60,7 @@ export class UserOrderListComponent implements OnInit {
         this.prevDisabled=false;
       }
   
-      if (this.page*+this.size>this.nOrders) {
+      if (this.page*+this.size>=this.nOrders) {
         this.nextDisabled=true;
       }else{
         this.nextDisabled=false;

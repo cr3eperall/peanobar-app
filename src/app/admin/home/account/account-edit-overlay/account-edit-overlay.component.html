@@ -17,9 +17,9 @@
             <div *ngIf="mode=='edit'" class="bal"><input type="number" name="recharge" id="recharge" [(ngModel)]="balance" (input)="checkBal()"> €</div>
             <h3 *ngIf="mode=='add'" i18n>Role:</h3>
             <select *ngIf="mode=='add'" name="role" id="role" [(ngModel)]="modelAccount!.role.id">
-                <option value="1">User</option>
-                <option value="2">Bar</option>
-                <option value="3">Admin</option>
+                <option value="1" i18n>User</option>
+                <option value="2" i18n>Bar</option>
+                <option value="3" i18n>Admin</option>
             </select>
             <h3 *ngIf="mode=='add'" i18n>Password:</h3>
             <input *ngIf="mode=='add'" type="text" name="name" id="name" [(ngModel)]="password">

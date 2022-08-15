@@ -23,4 +23,15 @@ export class OrderService {
     form.append("id",order.id.toString());
     return this.http.post<OrderDTO>(this.apiUrl+"/order/complete",form,{headers});
   }
+
+  countCompleted():Observable<number>{
+    const headers=this.loginService.getHeaders();
+    return this.http.get<number>(this.apiUrl+"/order/count",{headers});
+  }
+
+  getAll(page:number,size:number):Observable<OrderDTO[]>{
+    const headers=this.loginService.getHeaders();
+    return this.http.get<OrderDTO[]>(this.apiUrl+"/order/all?page="+page+"&size="+size,{headers});
+  }
+  
 }

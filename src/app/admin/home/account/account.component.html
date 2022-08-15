@@ -3,15 +3,15 @@
     <div class="inner">
         <div id="1" class="row">
             <h2>{{user.fullName}}</h2>
-            <h3>username: {{user.username}}</h3>
+            <h3 i18n>username: {{user.username}}</h3>
         </div>
         <div id="2" class="row">
-            <h3>email: {{user.email}}</h3>
-            <h3>balance: {{(user!.balance/100).toFixed(2)}}€</h3>
+            <h3 i18n>email: {{user.email}}</h3>
+            <h3 i18n>balance: {{(user!.balance/100).toFixed(2)}}€</h3>
         </div>
         <div id="3" class="row">
-            <h3>Classroom: {{user.classroom}}</h3>
-            <h3>Role: {{getRole()}}</h3>
+            <h3 i18n>Classroom: {{user.classroom}}</h3>
+            <h3 i18n>Role: {{getRole()}}</h3>
         </div>
     </div>
 </div>

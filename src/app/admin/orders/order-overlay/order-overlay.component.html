@@ -1,0 +1,23 @@
+<div *ngIf="order!=undefined" class="overlay">
+    <div class="container">
+        <div class="top">
+            <h2>{{order.order.madeAt | date:'dd/MM/YYYY HH:mm'}}</h2>
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
+        </div>
+        <div class="info">
+            <h3 i18n>Made By: {{order.user!.fullName}}</h3>
+        </div>
+        <div class="items">
+            <div class="product" *ngFor="let item of order.order.contents">
+                <h2 class="name">{{item.product.name}}</h2>
+                <p>{{(item.product.cost/100).toFixed(2)}}€</p>
+                <div class="price">
+                    <p>x {{item.quantity}}</p>
+                    <p>{{((item.product.cost*item.quantity)/100).toFixed(2)}}€</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="total" i18n>Total: {{(order.order.total/100).toFixed(2)}}€</h2>
+        <button class="ok" (click)="close()">OK</button>
+    </div>
+</div>

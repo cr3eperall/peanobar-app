@@ -12,6 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 
 //TODO add cursor to css
+//TODO add account page to admin and bar
+//TODO add csv parser to add products and accounts
 
 @NgModule({
   declarations: [

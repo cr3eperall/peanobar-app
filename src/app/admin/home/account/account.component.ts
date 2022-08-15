@@ -23,7 +23,7 @@ export class AccountComponent implements OnInit {
 	getRole(): string {
 		switch (this.user.role.id) {
 			case 1:
-        return "User";
+        return $localize `User`;
 			case 2:
 				return "Bar";
 			case 3:

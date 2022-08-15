@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  //TODO add button to delete account/classroom
   mode="account";
   users?:UserDTO[]=undefined;
   classrooms?:(number|undefined)[]=undefined;

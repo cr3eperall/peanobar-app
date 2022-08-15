@@ -1,4 +1,4 @@
-import { Observable, shareReplay  } from 'rxjs';
+import { Observable, shareReplay, map } from 'rxjs';
 import { LoginService } from './../login.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
@@ -38,7 +38,16 @@ export class UserService {
   getAll(page:number, size:number):Observable<UserDTO[]>{
     const headers=this.loginService.getHeaders();
     const data=new FormData();
-    const user=this.http.get<UserDTO[]>(this.apiUrl+"/user/all?page="+page+"&size="+size,{headers});
+    const user=this.http.get<UserDTO[]>(this.apiUrl+"/user/all?page="+page+"&size="+size,{headers}).pipe(
+      map((value)=>{
+        for (const user of value) {
+          this.userCache.set(user.uuid,new Observable((subscriber)=>{
+            subscriber.next(user);
+          }))
+        }
+        return value;
+      })
+    );
     return user;
   }
 
