@@ -6,7 +6,7 @@
     justify-content: space-evenly;
     border-style: solid;
     border-radius: 15px;
-    margin: 1em;
+    margin: 1em auto;
     background-color: white;
 }
 #edit{

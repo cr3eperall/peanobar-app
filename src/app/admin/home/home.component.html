@@ -1,12 +1,13 @@
 <div class="container">
     <div class="menu">
-        <h3 i18n>Mode:</h3>
-        <input type="radio" name="menu" id="account" value="account" checked="true" (change)="onChange($event)">
-        <label for="account" i18n>Account</label>
-        <input type="radio" name="menu" id="classroom" value="classroom" (change)="onChange($event)">
-        <label for="classroom" i18n>Classroom</label>
-        
-        <input type="text" name="search" id="search" placeholder="search" [(ngModel)]="searchModel" (keyup.enter)="onSearch()">
+        <div class="mode">
+            <h3 i18n>Mode:</h3>
+            <input type="radio" name="menu" id="account" value="account" checked="true" (change)="onChange($event)">
+            <label for="account" i18n>Account</label>
+            <input type="radio" name="menu" id="classroom" value="classroom" (change)="onChange($event)">
+            <label for="classroom" i18n>Classroom</label>    
+        </div>
+        <input type="text" name="search" id="search" i18n-placeholder placeholder="search" [(ngModel)]="searchModel" (keyup.enter)="onSearch()">
     </div>
     <div class="accounts" [hidden]="users==undefined || mode!='account'">
         <div class="add">

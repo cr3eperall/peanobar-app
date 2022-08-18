@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { UserService } from './../../services/bar/user.service';
 import { UserDTO } from './../../services/UserDTO';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { OrderStatus } from 'src/app/services/OrderDTO';
 
@@ -61,6 +61,7 @@ export class RechargeComponent implements OnInit {
     if (!this.scanSuccess) {
       this.getUser(result);
       this.scanSuccess=true;
+      this.enabled=false;
     }
   }
 
@@ -77,6 +78,17 @@ export class RechargeComponent implements OnInit {
   started(){
   }
 
+  upd(){
+    const dev=this.currentDevice;
+    for (const camera of this.cameras!) {
+      if (camera.deviceId!==this.currentDevice?.deviceId) {
+        this.currentDevice=camera;
+        setTimeout(() => { this.currentDevice=dev; }, 700);
+        return;
+      }
+    }
+  }
+
   confirm(){
     if (this.check()&&this.user) {
       this.userService.getUserUncached(this.user.uuid).subscribe({
@@ -84,8 +96,10 @@ export class RechargeComponent implements OnInit {
           const newBal=value.balance+Math.floor(Number.parseFloat(this.recharge!)*100);
           this.userService.updateBalance(value.uuid,newBal).subscribe((nvalue)=>{
             this.scanSuccess=false;
+            this.enabled=true;
             this.user=undefined;
             this.recharge="0";
+            this.upd();
           });
         },error:(err:HttpErrorResponse)=>{
           this.scanSuccess=false;

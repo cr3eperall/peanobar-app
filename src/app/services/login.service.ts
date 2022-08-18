@@ -174,7 +174,7 @@ export class LoginService implements CanActivate {
 	public getHeaders(): HttpHeaders {
 		const uuid = localStorage.getItem('uuid');
 		const key = localStorage.getItem('API-KEY');
-		return new HttpHeaders({ 'x-api-key': uuid + ' ' + key });
+		return new HttpHeaders({ 'x-api-key': uuid + ' ' + key});
 	}
 
 	changePassword(oldPw: string, newPw: string): Observable<string> {

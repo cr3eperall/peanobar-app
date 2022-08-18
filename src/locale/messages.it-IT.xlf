@@ -342,6 +342,10 @@
         <source>The balance must be greater then 0€</source>
         <target state="new">Il credito deve essere maggiore di 0€</target>
       </trans-unit>
+      <trans-unit id="7158592746571420879" datatype="html">
+        <source>search</source>
+        <target state="new">cerca</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

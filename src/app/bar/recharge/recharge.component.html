@@ -1,5 +1,6 @@
 <div class="playpause" (click)="enabled=!enabled">
-    <zxing-scanner (scanError)="onError($event)" [autostart]="!scanSuccess" [style.display]="scanSuccess ? 'none' : null" [enable]="!scanSuccess"  (autostarted)="started()" (scanSuccess)="scanned($event)" [(device)]="currentDevice" (camerasFound)="onCamerasFound($event)"></zxing-scanner>
+    <zxing-scanner (scanError)="onError($event)" [autostart]="!scanSuccess" *ngIf="!scanSuccess"  [enable]="!scanSuccess"  (autostarted)="started()" (scanSuccess)="scanned($event)" [(device)]="currentDevice" (camerasFound)="onCamerasFound($event)"></zxing-scanner>
+    <button (click)="upd()">ddvvd</button>
 </div>
 <select name="cameras" id="cameras" *ngIf="cameras!=undefined &&currentDevice!=undefined" (change)="onChange($event)">
     <option *ngFor="let camera of cameras" [value]="camera.deviceId" [selected]="camera.deviceId==currentDevice!.deviceId">{{camera.label}}</option>

@@ -12,6 +12,10 @@
     flex-wrap: nowrap;
     gap: 10px;
 }
+
+zxing-scanner{
+}
+
 #recharge{
     font-size: large;
     border-radius: 10px;

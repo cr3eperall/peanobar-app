@@ -1,4 +1,18 @@
 <div class="container">
-    <app-product *ngFor="let product of products" [product]="product" (addToCart)="openBuy($event)"></app-product>
+    <div class="search">
+        <div class="searchbox">
+            <input type="text" name="searchbox" id="searchbox" i18n-placeholder placeholder="search" (input)="search()" [(ngModel)]="searchModel">
+            <button (click)="reset()">×</button>
+        </div>
+        <div class="row">
+            <input type="radio" name="row" id="PANINO" (change)="onChange('PANINO')">
+            <label for="PANINO">Panini</label>
+            <input type="radio" name="row" id="BIBITA" (change)="onChange('BIBITA')">
+            <label for="BIBITA">Bibite</label>
+            <input type="radio" name="row" id="DOLCE" (change)="onChange('DOLCE')">
+            <label for="DOLCE">Dolci</label>
+        </div>
+    </div>
+    <app-product *ngFor="let product of displayProducts" [product]="product" (addToCart)="openBuy($event)"></app-product>
 </div>
 <app-quantity-selector-overlay [product]="selectedProduct" (closed)="closeBuy()"></app-quantity-selector-overlay>

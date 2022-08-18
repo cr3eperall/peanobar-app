@@ -256,6 +256,9 @@
       <trans-unit id="704104779740071290" datatype="html">
         <source>The balance must be greater then 0€</source>
       </trans-unit>
+      <trans-unit id="7158592746571420879" datatype="html">
+        <source>search</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

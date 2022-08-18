@@ -8,16 +8,22 @@
     align-items: center;
 }
 
-.menu input[type=radio]{
+.mode{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mode input[type=radio]{
     appearance: none;
 }
 
-.menu input[type=radio] + label{
+.mode input[type=radio] + label{
     user-select: none;
     color: gray;
     font-size: larger;
 }
-.menu input[type=radio]:checked + label{
+.mode input[type=radio]:checked + label{
     color: black;
     text-decoration: underline;
 }
@@ -32,8 +38,10 @@
 
 .add button{
     margin: auto 0;
-    height: 30px;
-    width: 200px;
+    height: fit-content;
+    min-height: 30px;
+    width: fit-content;
+    min-width: 200px;
     font-size: large;
     color: black;
     box-sizing: border-box;
@@ -152,4 +160,15 @@
     border-width: 0px;
     box-shadow: 0px 0px 0px gray;
     transition: .1s;
+}
+
+@media screen and (max-width:500px) {
+    .menu{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #search{
+        margin: 0;
+        margin-bottom: 1em;
+    }
 }
