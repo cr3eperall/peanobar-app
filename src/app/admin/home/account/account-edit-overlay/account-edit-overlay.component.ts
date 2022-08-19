@@ -60,7 +60,7 @@ export class AccountEditOverlayComponent implements OnInit {
         email:"",
         role:{id: 1, name: 'ROLE_USER'},
         balance:0,
-        classroom:0,
+        classroom:"",
         cartOrder:null!,
         orderInProgress:false,
       }
@@ -107,7 +107,7 @@ export class AccountEditOverlayComponent implements OnInit {
       if(this.modelAccount?.username===null||this.modelAccount?.username===undefined||this.modelAccount?.username===""){
         return true;
       }
-      if (this.modelAccount.classroom<0) {
+      if (this.modelAccount.classroom.length>15) {
         return true;
       }
       if (this.password===undefined||this.password===null||this.password?.length<8) {

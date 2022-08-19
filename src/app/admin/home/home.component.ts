@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
   //TODO add button to delete account/classroom
   mode="account";
   users?:UserDTO[]=undefined;
-  classrooms?:(number|undefined)[]=undefined;
+  classrooms?:(string|undefined)[]=undefined;
   accountToEdit:UserDTO|undefined|null=undefined;
-  classroomToEdit:number|undefined|null=undefined;
+  classroomToEdit:string|undefined|null=undefined;
 
   searchModel?="";
   prevDisabled=true;
@@ -80,8 +80,8 @@ export class HomeComponent implements OnInit {
     }
   }
   
-  getClassroomsFor(users:UserDTO[]):number[]{
-    let classrooms:number[]=[];
+  getClassroomsFor(users:UserDTO[]):string[]{
+    let classrooms:string[]=[];
     for (const user of users) {
       if (!classrooms.includes(user.classroom)) {
         classrooms.push(user.classroom);
@@ -103,7 +103,7 @@ export class HomeComponent implements OnInit {
     this.accountToEdit=user;
   }
   
-  openClassroomEditor(classroom:number){
+  openClassroomEditor(classroom:string){
     this.classroomToEdit=classroom;
   }
   
@@ -147,7 +147,7 @@ export class HomeComponent implements OnInit {
     }
   }
   
-  onClassroomEdited(event:{old:number|undefined,new:number|undefined}){
+  onClassroomEdited(event:{old:string|undefined,new:string|undefined}){
     if (this.classrooms?.includes(event.old) && event.old!==undefined && event.new!==undefined) {
       this.userService.updateClassroom(event.old!,event.new!).subscribe((value)=>{
         this.updateClassrooms();

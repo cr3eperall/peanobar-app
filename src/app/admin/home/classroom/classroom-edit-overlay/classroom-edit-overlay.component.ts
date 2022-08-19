@@ -7,25 +7,25 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ClassroomEditOverlayComponent implements OnInit {
 
-  private _classroom?: number | undefined | null;
-  modelClassroom:number | undefined | null;
+  private _classroom?: string | undefined | null;
+  modelClassroom:string | undefined | null;
   message="";
 
   @Output()
   closed=new EventEmitter();
   @Output()
-  updated=new EventEmitter<{old:number,new:number}>();
+  updated=new EventEmitter<{old:string,new:string}>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public get classroom(): number | undefined | null {
+  public get classroom(): string | undefined | null {
     return this._classroom;
   }
   @Input()
-  public set classroom(value: number | undefined | null) {
+  public set classroom(value: string | undefined | null) {
     this._classroom = value;
     this.modelClassroom=this._classroom;
   }

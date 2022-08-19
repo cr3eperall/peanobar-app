@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   products:OrderItem[]=[];
   classrooms:OrderDTO[]=[];
   sorting="byorder";
-  classroomMap:Map<string,number> |undefined = undefined;
+  classroomMap:Map<string,string> |undefined = undefined;
   overlayVisible=false;
   completedOrders:OrderDTO[]=[];
   constructor(private orderService:OrderService, private userService:UserService) { }
@@ -63,8 +63,8 @@ export class HomeComponent implements OnInit {
     return products as OrderItem[];
   }
 
-  generateClassroomMap(orders:OrderDTO[],then?:(map:Map<string,number>)=>void){
-    const classroomMap=new Map<string,number>;
+  generateClassroomMap(orders:OrderDTO[],then?:(map:Map<string,string>)=>void){
+    const classroomMap=new Map<string,string>;
     let count=0;
     for (const order of orders) {
       if (!classroomMap.has(order.owner)) {
@@ -83,9 +83,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  getClassroomMap(orders:OrderDTO[],classroomMap:Map<string,number>):Map<number,OrderDTO>{
-    const map=new Map<number,OrderDTO>;
-    const orderMap=new Map<number,OrderDTO[]>;
+  getClassroomMap(orders:OrderDTO[],classroomMap:Map<string,string>):Map<string,OrderDTO>{
+    const map=new Map<string,OrderDTO>;
+    const orderMap=new Map<string,OrderDTO[]>;
     for (const order of orders) {
       const classroom=classroomMap.get(order.owner)!;
       if(orderMap.has(classroom)){
@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit {
     return map;
   }
 
-  getClassrooms(map:Map<number,OrderDTO>):OrderDTO[]{
+  getClassrooms(map:Map<string,OrderDTO>):OrderDTO[]{
     let classrooms=Array.apply(null,Array(map.size)) as (OrderDTO|undefined)[];
     for (const classroom of map.entries()) {
       let i:OrderDTO=classroom[1];

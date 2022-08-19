@@ -9,22 +9,22 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ClassroomComponent implements OnInit {
 
-  private _classroom?: number | undefined;
+  private _classroom?: string | undefined;
   users?:UserDTO[];
   expanded=false;
   @Output()
 	editAccount = new EventEmitter<UserDTO>();
   @Output()
-  editClassroom=new EventEmitter<number>()
+  editClassroom=new EventEmitter<string>()
 
   constructor(private userService:UserService) { }
 
-  public get classroom(): number | undefined {
+  public get classroom(): string | undefined {
     return this._classroom;
   }
 
   @Input()
-  public set classroom(value: number | undefined) {
+  public set classroom(value: string | undefined) {
     this._classroom = value;
     if (value===undefined) {
       this.users=undefined;

@@ -25,12 +25,12 @@ export class UserService {
     }
   }
 
-  getAllClassrooms():Observable<number[]>{
+  getAllClassrooms():Observable<string[]>{
     const headers=this.loginService.getHeaders();
-    return this.http.get<number[]>(this.apiUrl+"/user/classrooms",{headers});
+    return this.http.get<string[]>(this.apiUrl+"/user/classrooms",{headers});
   }
 
-  getClassroom(classroom:number):Observable<UserDTO[]>{
+  getClassroom(classroom:string):Observable<UserDTO[]>{
     const headers=this.loginService.getHeaders();
     return this.http.get<UserDTO[]>(this.apiUrl+"/user/classroom?classroom="+classroom,{headers});
   }
@@ -77,7 +77,7 @@ export class UserService {
       data.append("name",updated.fullName);
     }
     if (oldUser.classroom!=updated.classroom) {
-      data.append("classroom",updated.classroom.toString());
+      data.append("classroom",updated.classroom);
     }
     if (oldUser.email!=updated.email) {
       data.append("email",updated.email);
@@ -86,23 +86,22 @@ export class UserService {
   }
 
   createUser(user:UserDTO,password:string){
-    console.log("create ok");
     const headers=this.loginService.getHeaders();
     const data=new FormData();
     data.append("name",user.fullName);
     data.append("username",user.username);
     data.append("email",user.email);
     data.append("role_id",user.role.id.toString());
-    data.append("classroom",user.classroom.toString());
+    data.append("classroom",user.classroom);
     data.append("password",password);
     return this.http.post<UserDTO>(this.apiUrl+"/user",data,{headers});
   }
 
-  updateClassroom(oldC:number,newC:number){
+  updateClassroom(oldC:string,newC:string){
     const headers=this.loginService.getHeaders();
     const data=new FormData();
-    data.append("old",oldC.toString());
-    data.append("new",newC.toString());
+    data.append("old",oldC);
+    data.append("new",newC);
     return this.http.patch<UserDTO>(this.apiUrl+"/user/classroom",data,{headers});
   }
 

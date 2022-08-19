@@ -9,7 +9,7 @@ export interface UserDTO{
         name: string
     },
     balance: number,
-    classroom: number,
+    classroom: string,
     cartOrder: OrderDTO,
     orderInProgress: boolean
 }
