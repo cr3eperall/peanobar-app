@@ -120,5 +120,15 @@ export class UserService {
     const headers=this.loginService.getHeaders();
     return this.http.get<number>(this.apiUrl+"/user/count",{headers});
   }
+
+  deleteUser(uuid:string):Observable<{}>{
+    const headers=this.loginService.getHeaders();
+    return this.http.delete(this.apiUrl+"/user?uuid="+uuid,{headers});
+  }
+
+  deleteClassroom(uuid:string):Observable<{}>{
+    const headers=this.loginService.getHeaders();
+    return this.http.delete(this.apiUrl+"/user/classroom?uuid="+uuid,{headers});
+  }
   
 }

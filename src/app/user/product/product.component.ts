@@ -2,7 +2,7 @@ import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
 import { SafeUrl } from '@angular/platform-browser';
 import { ProductDTO, ProductType } from '../../services/ProductDTO';
-import { Component, Input, OnInit, enableProdMode, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, enableProdMode, Output, EventEmitter, HostBinding } from '@angular/core';
 import { ImageService } from 'src/app/services/image.service';
 
 @Component({
@@ -20,12 +20,17 @@ export class ProductComponent implements OnInit {
   addToCart=new EventEmitter<ProductDTO>();
   @Output()
   qChanged=new EventEmitter<number>();
+  @HostBinding("style.--enabled")
+  enabled="solid";
   constructor(private imageService:ImageService,public router:Router,private orderService:OrderService) { }
   math=Math;
   ngOnInit(): void {
     this.imageService.getImage(this.product.img).subscribe((value)=>{
       this.image=value;
     });
+    if (this.product?.disabled) {
+      this.enabled="dashed";
+    }
   }
 
   onClick(){

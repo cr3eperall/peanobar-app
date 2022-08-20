@@ -1,7 +1,7 @@
 <div class="container" *ngIf="classroom!==undefined">
     <div class="row">
         <button id="edit" (click)="edit()"><img src="assets/edit2.png" alt="Edit"></button>
-        <h2 i18n>Room: {{classroom!}}</h2>
+        <h2 i18n>Classroom: {{classroom!}}</h2>
         <!-- <h3>Users: {{users!.length}}</h3> -->
         <div class="extended" (click)="toggleExpansion($event)" [ngClass]="expanded ? 'ext' : ''" [attr.aria-expanded]="expanded">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"

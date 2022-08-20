@@ -1,7 +1,7 @@
 import { ImageService } from 'src/app/services/image.service';
 import { SafeUrl } from '@angular/platform-browser';
 import { ProductDTO } from './../../../services/ProductDTO';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -15,12 +15,17 @@ export class ProductComponent implements OnInit {
   image:SafeUrl="";
   @Output()
   edit=new EventEmitter();
+  @HostBinding("style.--enabled")
+  enabled="solid";
   constructor(private imageService:ImageService) { }
 
   ngOnInit(): void {
     this.imageService.getImage(this.product!.img).subscribe((value)=>{
       this.image=value;
     })
+    if (this.product?.disabled) {
+      this.enabled="dashed";
+    }
   }
 
   edited(){

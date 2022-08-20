@@ -21,7 +21,7 @@ export class AccountEditOverlayComponent implements OnInit {
   @Output()
   updated=new EventEmitter<{user:UserDTO,mode:"edit"|"add",password?:string}>();
   @Output()
-  recharge=new EventEmitter<{uuid:string,bal:number}>();
+  delete=new EventEmitter<UserDTO>();
   
   constructor() { }
   
@@ -82,7 +82,7 @@ export class AccountEditOverlayComponent implements OnInit {
   }
 
   checkBal():boolean{
-    if (this.recharge!=null&&this.recharge!=undefined) {
+    if (this.balance!=null&&this.balance!=undefined) {
       const cost:number=Math.floor(Number.parseFloat(this.balance!)*100)
       if (cost<0) {
         this.message=$localize `The balance must be greater then 0€`;
@@ -128,6 +128,12 @@ export class AccountEditOverlayComponent implements OnInit {
         return true;
       }
       return true;
+    }
+  }
+
+  deleteAcc(){
+    if (confirm($localize `Are you sure you want to delete this Account?`)) {
+      this.delete.emit(this.account!);
     }
   }
 

@@ -6,4 +6,4 @@
         <app-product *ngFor="let product of products" [product]="product" (edit)="onEdit(product)"></app-product>
     </div>
 </div>
-<app-edit-overlay [mode]="mode" [product]="selectedProduct" (closed)="close()" (updated)="update($event)"></app-edit-overlay>
+<app-edit-overlay [mode]="mode" [product]="selectedProduct" (closed)="close()" (updated)="update($event)" (deleted)="deletePr($event)"></app-edit-overlay>

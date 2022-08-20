@@ -151,6 +151,7 @@ export class HomeComponent implements OnInit {
     if (this.classrooms?.includes(event.old) && event.old!==undefined && event.new!==undefined) {
       this.userService.updateClassroom(event.old!,event.new!).subscribe((value)=>{
         this.updateClassrooms();
+        this.updateUsers();
         this.classroomToEdit=undefined;
       });
     }
@@ -176,4 +177,19 @@ export class HomeComponent implements OnInit {
       this.mode=e.value;
     }
   }
+
+  deleteUser(user:UserDTO){
+    this.userService.deleteUser(user.uuid).subscribe((value)=>{
+      this.updateUsers();
+      this.accountToEdit=undefined;
+    });
+  }
+
+  deleteClassroom(classroom:string){
+    this.userService.deleteClassroom(classroom).subscribe((value)=>{
+      this.updateClassrooms();
+      this.classroomToEdit=undefined;
+    })
+  }
+
 }

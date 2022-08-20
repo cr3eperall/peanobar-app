@@ -67,6 +67,14 @@
     margin: 0;
 }
 
+#delete{
+    width: 100px !important;
+    height: 25px;
+    padding: 0 10px;
+    font-size: 20px;
+    margin: 10px 10px auto 0px;
+}
+
 .confirm{
     visibility: var(--hidden);
     font-size: 25px;

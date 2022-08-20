@@ -23,6 +23,7 @@
             </select>
             <h3 *ngIf="mode=='add'" i18n>Password:</h3>
             <input *ngIf="mode=='add'" type="text" name="name" id="name" [(ngModel)]="password">
+            <button *ngIf="mode==='edit'" class="confirm" id="delete" (click)="deleteAcc()">delete</button>
         </div>
         <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
         <button *ngIf="account!==undefined" [disabled]="isDisabled()" class="confirm" (click)="update()" i18n>Confirm</button>

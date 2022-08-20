@@ -61,9 +61,13 @@ export class OrdersComponent implements OnInit {
       for (const order of value) {
         let res={order:order,user:undefined};
         const idx=this.orders.push(res)-1;
-        this.userService.getUser(order.owner).subscribe((value)=>{
-          this.orders[idx].user=value;
-        });
+        if (order.owner!=undefined&&order.owner!=undefined) {
+          this.userService.getUser(order.owner).subscribe((value)=>{
+            this.orders[idx].user=value;
+          });
+        }else{
+          this.orders[idx].user=undefined;
+        }
       }
       //this.openOverlay(this.orders[0]);
     });

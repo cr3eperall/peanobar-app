@@ -4,6 +4,7 @@ export interface ProductDTO{
     cost: number;
     img: number;
     type: ProductType;
+    disabled?:boolean;
 }
 
 export enum ProductType{

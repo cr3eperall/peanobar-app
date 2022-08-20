@@ -202,9 +202,6 @@
       <trans-unit id="2265578229938417504" datatype="html">
         <source>balance: <x id="INTERPOLATION" equiv-text="{{(user!.balance/100).toFixed(2)}}"/>€</source>
       </trans-unit>
-      <trans-unit id="2297541672742435164" datatype="html">
-        <source>Room: <x id="INTERPOLATION" equiv-text="{{classroom!}}"/></source>
-      </trans-unit>
       <trans-unit id="2321964324440757939" datatype="html">
         <source>Made By: <x id="INTERPOLATION" equiv-text="{{order.user!.fullName}}"/></source>
       </trans-unit>
@@ -258,6 +255,18 @@
       </trans-unit>
       <trans-unit id="7158592746571420879" datatype="html">
         <source>search</source>
+      </trans-unit>
+      <trans-unit id="7183676743839208840" datatype="html">
+        <source>Are you sure you want to disable this product?</source>
+      </trans-unit>
+      <trans-unit id="180528815572802458" datatype="html">
+        <source>Are you sure you want to delete this Account?</source>
+      </trans-unit>
+      <trans-unit id="5533679552057187022" datatype="html">
+        <source>Are you sure you want to delete this classroom?</source>
+      </trans-unit>
+      <trans-unit id="5182622388416291693" datatype="html">
+        <source>Are you sure you want to enable this product?</source>
       </trans-unit>
     </body>
   </file>

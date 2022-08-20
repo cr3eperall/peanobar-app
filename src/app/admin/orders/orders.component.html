@@ -16,6 +16,7 @@
         <div *ngFor="let order of orders" class="order-item">
             <h4>{{order.order.madeAt | date:'dd/MM/YYYY HH:mm':'it-IT'}}</h4>
             <h4 *ngIf="order.user!==undefined">{{order.user!.fullName}}</h4>
+            <h4 *ngIf="order.user===undefined">[DELETED]</h4>
             <h4 i18n>Total: {{(order.order.total/100).toFixed(2)}}€</h4>
             <button (click)="openOverlay(order)" i18n>Details</button>
         </div>

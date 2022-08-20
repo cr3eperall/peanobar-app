@@ -43,6 +43,19 @@ export class ProductsComponent implements OnInit {
     this.selectedProduct=product;
   }
 
+  deletePr(product:ProductDTO){
+    this.productService.deleteProduct(product).subscribe((value)=>{
+      if (value>=0) {
+        this.productService.getAllProducts().subscribe((value)=>{
+          this.products=value;
+          this.close();
+        })
+      }else{
+        throw new Error("this product doesnt exist")
+      }
+    })
+  }
+
   update(event:{product:ProductDTO,mode?:"Add"|"Edit"}){
     if (event.mode==undefined|| event.mode=='Edit') {
       this.productService.updateProduct(event.product).subscribe((value)=>{

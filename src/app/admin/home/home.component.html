@@ -32,5 +32,5 @@
         <app-classroom *ngFor="let classroom of classrooms" [classroom]="classroom" (editAccount)="openAccountEditor($event)" (editClassroom)="openClassroomEditor($event)"></app-classroom>
         <app-classroom-edit-overlay [classroom]="classroomToEdit" (closed)="onClosedClassroomEditor()" (updated)="onClassroomEdited($event)"></app-classroom-edit-overlay>
     </div>
-    <app-account-edit-overlay [account]="accountToEdit" (closed)="onClosedAccountEditor()" (updated)="onAccountEdited($event)"></app-account-edit-overlay>
+    <app-account-edit-overlay [account]="accountToEdit" (closed)="onClosedAccountEditor()" (updated)="onAccountEdited($event)" (delete)="deleteUser($event)"></app-account-edit-overlay>
 </div>

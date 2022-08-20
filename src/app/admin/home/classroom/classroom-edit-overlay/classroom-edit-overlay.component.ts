@@ -15,6 +15,8 @@ export class ClassroomEditOverlayComponent implements OnInit {
   closed=new EventEmitter();
   @Output()
   updated=new EventEmitter<{old:string,new:string}>();
+  @Output()
+  delete=new EventEmitter<string>();
 
   constructor() { }
 
@@ -45,6 +47,12 @@ export class ClassroomEditOverlayComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  deleteCls(){
+    if (confirm($localize `Are you sure you want to delete this classroom?`)) {
+      this.delete.emit(this.classroom!);
+    }
   }
 
 }

@@ -9,7 +9,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./edit-overlay.component.css']
 })
 export class EditOverlayComponent implements OnInit {
-
+  
   private _product:ProductDTO|undefined;
   modelProduct:{
     name: string;
@@ -24,12 +24,13 @@ export class EditOverlayComponent implements OnInit {
   closed=new EventEmitter();
   @Output()
   updated=new EventEmitter<{product:ProductDTO,mode?:"Add"|"Edit"}>();
-
+  @Output()
+  deleted=new EventEmitter<ProductDTO>();
   constructor() { }
-
+  
   ngOnInit(): void {
   }
-
+  
   localize(mode :"Add"|"Edit"):string{
     if (mode=='Add') {
       return ($localize `Add`)
@@ -41,7 +42,7 @@ export class EditOverlayComponent implements OnInit {
   public get product() : ProductDTO|undefined {
     return this._product;
   }
-
+  
   @Input()
   public set product(v : ProductDTO|undefined) {
     this._product = v;
@@ -56,7 +57,7 @@ export class EditOverlayComponent implements OnInit {
       }
     }
   }
-  
+
   select(id:number){
     this.modelProduct!.img=id;
   }
@@ -111,6 +112,18 @@ export class EditOverlayComponent implements OnInit {
       type:this.modelProduct!.type
     }
     return editedProduct;
+  }
+
+  deletePr(){
+    let msg="";
+    if (this.product?.disabled) {
+      msg=$localize `Are you sure you want to enable this product?`
+    }else{
+      msg=$localize `Are you sure you want to disable this product?`
+    }
+    if (confirm(msg)) {
+      this.deleted.emit(this.product);
+    }
   }
 
   update(){
