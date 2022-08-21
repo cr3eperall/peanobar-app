@@ -1,6 +1,7 @@
 <div *ngIf="user!=undefined" class="container">
-    <h2>Email:</h2>
-    <div class="email">
+    <h2>{{user.fullName}}</h2>
+    <h2 *ngIf="user.email!=='' && user.email!==undefined && user.email!==null">Email:</h2>
+    <div *ngIf="user.email!=='' && user.email!==undefined && user.email!==null" class="email">
         <p>{{user.email}}</p>
     </div>
     <h2 i18n>Change password</h2>
@@ -14,8 +15,8 @@
         <h2 [hidden]="message.length==0" class="message">{{message}}</h2>
         <button [disabled]="disabled" (click)="changePw()" type="submit" i18n>Change password</button>
     </div>
-    <h2 i18n>Old orders</h2>
-    <div class="orders">
+    <h2 i18n *ngIf="user.role.id==1">Old orders</h2>
+    <div class="orders" *ngIf="user.role.id==1">
         <app-user-order-list></app-user-order-list>
     </div>
 </div>

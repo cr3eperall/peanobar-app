@@ -6,13 +6,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import { AccountComponent } from '../components/account/account.component';
 
 const routes: Routes = [
   {path:"",component:BarHeaderComponent,children:[
     {path: "",component:LoginComponent},
     {path:"home",component:HomeComponent,canActivate:[LoginService]},
     {path:"products",component:ProductsComponent,canActivate:[LoginService]},
-    {path:"recharge",component:RechargeComponent,canActivate:[LoginService]}
+    {path:"recharge",component:RechargeComponent,canActivate:[LoginService]},
+    {path: "account",component:AccountComponent,canActivate:[LoginService]},
   ],canActivate:[LoginService]}
 ];
 

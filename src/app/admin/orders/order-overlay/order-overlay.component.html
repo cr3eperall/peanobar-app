@@ -5,7 +5,7 @@
             <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
         </div>
         <div class="info">
-            <h3 i18n>Made By: {{order.user!.fullName}}</h3>
+            <h3 i18n *ngIf="order.user!==undefined">Made By: {{order.user!.fullName}}</h3>
         </div>
         <div class="items">
             <div class="product" *ngFor="let item of order.order.contents">

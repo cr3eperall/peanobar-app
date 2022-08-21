@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
     }
     this.displayProducts=[];
     for (const product of this.products) {
-      if (product.name.toLowerCase().includes(this.searchModel!)) {
+      if (product.name.toLowerCase().includes(this.searchModel!.toLowerCase())) {
         this.displayProducts.push(product);
       }
     }

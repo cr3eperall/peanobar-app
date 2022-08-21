@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 40vh 0;
+    padding: 0 0;
 }
 .inp{
     display: flex;
@@ -13,7 +13,14 @@
     gap: 10px;
 }
 
-zxing-scanner{
+.user{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.user h3{
+    margin-top: 10px;
+    margin-left: 1em;
 }
 
 #recharge{

@@ -18,23 +18,30 @@
 
 #searchbox{
     margin: .5em 0;
+    padding: 3px;
     height: 30px;
     width: 200px;
     font-size: large;
     border-radius: 10px;
     border-style: solid;
+    border-width: 2px;
 }
 
 .searchbox button{
     appearance: none;
-    border: 1px solid gray;
-    border-radius: 100px;
-    font-size: x-large;
-    height: 30px;
-    width: 30px;
+    color: black;
+    font-size: larger;
+    height: 36px;
+    min-height: 36px;
+    width: 36px;
+    min-width: 36px;
     padding: 0;
     background-color: transparent;
     cursor: pointer;
+    border-color: #767676;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .row{

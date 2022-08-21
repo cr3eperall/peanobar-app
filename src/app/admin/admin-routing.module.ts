@@ -1,3 +1,4 @@
+import { AccountComponent } from './../components/account/account.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './../bar/products/products.component';
 import { LoginService } from './../services/login.service';
@@ -12,6 +13,7 @@ const routes: Routes = [{path:"",component:AdminHeaderComponent,children:[
   {path:"home",component:HomeComponent,canActivate:[LoginService]},
   {path: "products",component:ProductsComponent,canActivate:[LoginService]},
   {path: "orders",component:OrdersComponent,canActivate:[LoginService]},
+  {path: "account",component:AccountComponent,canActivate:[LoginService]},
 ],canActivate:[LoginService]}];
 
 @NgModule({

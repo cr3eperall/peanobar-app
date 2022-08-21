@@ -118,12 +118,14 @@
 }
 
 .editor{
-    width: 80%;
+    width: 90%;
     height: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .editor input{
@@ -140,7 +142,7 @@
 
 @media (max-width:900px)  {
     .editor input{
-        width: 100%;
+        width: 90%;
     }
 }
 

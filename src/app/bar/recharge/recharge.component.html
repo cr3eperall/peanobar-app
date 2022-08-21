@@ -5,6 +5,13 @@
     <option *ngFor="let camera of cameras" [value]="camera.deviceId" [selected]="camera.deviceId==currentDevice!.deviceId">{{camera.label}}</option>
 </select>
 <div class="container" *ngIf="scanSuccess">
+    <div *ngIf="user!=undefined" class="user">
+        <h2 i18n>User:</h2>
+        <h3>{{user!.fullName}}</h3>
+        <h2 i18n>balance:</h2>
+        <h3>{{(user!.balance/100).toFixed(2)}}€</h3>
+    </div>
+    <h2>Recharge:</h2>
     <div class="inp"><input type="number" name="recharge" id="recharge" [(ngModel)]="recharge" (input)="check()"> €</div>
     <h2>{{message}}</h2>
     <button class="confirm" (click)="confirm()" i18n>Recharge</button>
