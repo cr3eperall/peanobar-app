@@ -161,6 +161,12 @@
     }
 }
 
+@media screen and (max-height:850px) {
+    .container{
+        height: 90%;
+    }
+}
+
 @media (max-width:600px), (max-height:450px)  {
     .container{
         height: 95%;
