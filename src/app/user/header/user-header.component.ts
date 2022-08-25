@@ -11,29 +11,15 @@ import { NavigationEnd, Router } from '@angular/router';
 export class UserHeaderComponent implements OnInit {
   user?:UserDTO;
   constructor(public router:Router, private loginService:LoginService) {
-    this.router.events.subscribe((value)=>{
-      if (value instanceof NavigationEnd) {
-        this.loginService.getUser().subscribe({
-          next:(value)=>{
-            this.user=value;
-          },
-          error:(err)=>{
-            this.user=undefined;
-          }
-        });
-      }
-    })
-   }
+    this.user=loginService.cachedUser;
+  }
 
   ngOnInit(): void {
-    this.loginService.getUser().subscribe({
-      next:(value)=>{
-        this.user=value;
-      },
-      error:(err)=>{
-        this.user=undefined;
+    this.router.events.subscribe((value)=>{
+      if (value instanceof NavigationEnd) {
+        this.user=this.loginService.cachedUser;
       }
-    });
+    })
   }
 
 }

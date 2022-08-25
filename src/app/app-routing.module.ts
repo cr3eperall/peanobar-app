@@ -1,3 +1,4 @@
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { LoginService } from './services/login.service';
 import { LogoutComponent } from './components/logout/logout.component';
 import { LoginComponent } from './components/login/login.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path: "logout",component:LogoutComponent},
   {path: "",loadChildren: ()=>import( /* webpackChunkName: "UserModule" */'./user/user.module').then(m=>m.UserModule)},
   {path: "bar",loadChildren: ()=>import( /* webpackChunkName: "BarModule" */"./bar/bar.module").then(m=>m.BarModule),canActivate:[LoginService]},
-  {path: "admin",loadChildren: ()=>import( /* webpackChunkName: "AdminModule" */'./admin/admin.module').then(m=>m.AdminModule),canActivate:[LoginService]}
+  {path: "admin",loadChildren: ()=>import( /* webpackChunkName: "AdminModule" */'./admin/admin.module').then(m=>m.AdminModule),canActivate:[LoginService]},
+  {path: "**", pathMatch:"full", component: PagenotfoundComponent}
 ];
 
 @NgModule({

@@ -18,11 +18,13 @@ export class LoginComponent implements OnInit {
   borderColor="rgb(0,0,0,0)"
   @HostBinding("style.--message-visibility")
   messageVisibility="hidden"
+  disabled=false;
 
   constructor(private loginService:LoginService, private router:Router, private route: ActivatedRoute) {
   }
   
   login(){
+    this.disabled=true;
     this.loginService.login(this.username,this.password,(resp)=>{
       if(resp==401){
         this.setMessage(0);
@@ -30,6 +32,8 @@ export class LoginComponent implements OnInit {
         this.loginService.loginStatus().subscribe((ret)=>{
           if(ret==2)
           this.setMessage(1);
+        },(err)=>{
+          this.disabled=false;
         });
       }
     });
@@ -62,12 +66,14 @@ export class LoginComponent implements OnInit {
         this.messageVisibility="visible";
         this.color="rgb(221, 75, 57)";
         this.borderColor="rgb(255, 0, 0)";
+        this.disabled=false;
         break;
       case 1:
         this.loginSucc=$localize `Login success`;
         this.messageVisibility="visible";
         this.color="rgb(4, 238, 4)";
         this.borderColor="rgb(0, 255, 0)";
+        this.disabled=true;
         this.redirect();
         break;
       case 2:
@@ -75,6 +81,7 @@ export class LoginComponent implements OnInit {
         this.messageVisibility="visible";
         this.color="rgb(38, 67, 189)";
         this.borderColor="rgb(0, 0, 255)";
+        this.disabled=true;
         this.redirect();
         break;
       case 3:
@@ -82,10 +89,12 @@ export class LoginComponent implements OnInit {
         this.messageVisibility="visible";
         this.color="rgba(50, 50, 50, 50%)";
         this.borderColor="rgb(0, 0, 0)";
+        this.disabled=false;
         break;
       default:
         this.loginSucc="";
         this.messageVisibility="hidden";
+        this.disabled=false;
         break;
     }
   }

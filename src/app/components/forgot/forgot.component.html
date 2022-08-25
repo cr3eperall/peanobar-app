@@ -1,0 +1,7 @@
+<div class="container">
+    <h1 i18n>Reset Password</h1>
+    <h2>Email:</h2>
+    <input type="text" name="email" [(ngModel)]="email">
+    <h2 class="message">{{message}}</h2>
+    <button (click)="send()" [disabled]="!valid(email)||sending" i18n>Send</button>
+</div>

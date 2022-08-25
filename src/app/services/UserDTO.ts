@@ -10,6 +10,5 @@ export interface UserDTO{
     },
     balance: number,
     classroom: string,
-    cartOrder: OrderDTO,
-    orderInProgress: boolean
+    cartOrder: OrderDTO
 }

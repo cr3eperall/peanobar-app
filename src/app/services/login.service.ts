@@ -26,6 +26,7 @@ import {
 export class LoginService implements CanActivate {
 	apiUrl = environment.apiUrl;
 	constructor(private http: HttpClient, private router:Router,private thisroute:ActivatedRoute) {}
+	public cachedUser?:UserDTO;
 
 	canActivate(
 		route: ActivatedRouteSnapshot,
@@ -75,7 +76,7 @@ export class LoginService implements CanActivate {
 		const key = localStorage.getItem('API-KEY');
 		const headers = new HttpHeaders({ 'x-api-key': uuid + ' ' + key });
 		let obs = new Observable<number>((subscriber) => {
-			if (uuid != null && key != null) {
+			if (uuid !== null && uuid !== undefined && key !== null && key !== undefined) {
 				const result = this.http.get<UserDTO>(
 					this.apiUrl + '/user/own',
 					{ headers }
@@ -115,6 +116,7 @@ export class LoginService implements CanActivate {
 							contents: [],
 						};
 					}
+					this.cachedUser=value;
 					subscriber.next(value);
 				},err=>subscriber.error(err));
 		});

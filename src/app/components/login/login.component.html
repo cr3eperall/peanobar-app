@@ -7,7 +7,7 @@
     <h2>Password</h2>
     <input type="password" name="password" [(ngModel)]="password" (keyup.enter)="login()">
     <div class="login-options">
-        <a href="/forgot" i18n>password forgot</a>
-        <button (click)="login()" i18n>Login</button>
+        <a routerLink="forgot" i18n>password forgot</a>
+        <button (click)="login()" [disabled]="disabled" i18n>Login</button>
     </div>
 </div>

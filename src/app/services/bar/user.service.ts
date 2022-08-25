@@ -25,6 +25,11 @@ export class UserService {
     }
   }
 
+  getUserByUsername(name:string):Observable<UserDTO>{
+    const headers=this.loginService.getHeaders();
+    return this.http.get<UserDTO>(this.apiUrl+"/user/byusername?username="+name,{headers});
+  }
+
   getAllClassrooms():Observable<string[]>{
     const headers=this.loginService.getHeaders();
     return this.http.get<string[]>(this.apiUrl+"/user/classrooms",{headers});

@@ -11,9 +11,11 @@ import { LoginComponent } from './components/login/login.component';
 
 import { LogoutComponent } from './components/logout/logout.component';
 import { UserOrderListComponent } from './components/account/user-order-list/user-order-list.component';
+import { ForgotComponent } from './components/forgot/forgot.component';
+import { ResetpwComponent } from './components/resetpw/resetpw.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 //TODO add cursor to css
-//TODO add account page to admin and bar
 //TODO add csv parser to add products and accounts
 
 @NgModule({
@@ -23,7 +25,10 @@ import { UserOrderListComponent } from './components/account/user-order-list/use
     LogoutComponent,
     AccountComponent,
     AccountOrderOverlayComponent,
-    UserOrderListComponent
+    UserOrderListComponent,
+    ForgotComponent,
+    ResetpwComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
