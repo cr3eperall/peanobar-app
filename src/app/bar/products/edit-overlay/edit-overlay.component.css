@@ -129,7 +129,7 @@
 }
 
 .editor input{
-    width: 300px;
+    width: 90%;
     font-size: large;
     border-radius: 10px;
     border-style: solid;
@@ -149,7 +149,7 @@
 @media (min-width:900px) {
     
     .editor{
-        width: fit-content;
+        width: 500px;
     }
 }
 

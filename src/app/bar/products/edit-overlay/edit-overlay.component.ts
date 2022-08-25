@@ -26,6 +26,11 @@ export class EditOverlayComponent implements OnInit {
   updated=new EventEmitter<{product:ProductDTO,mode?:"Add"|"Edit"}>();
   @Output()
   deleted=new EventEmitter<ProductDTO>();
+
+
+  disableLocalized=$localize `disable`;
+  enableLocalized=$localize `enable`;
+
   constructor() { }
   
   ngOnInit(): void {
