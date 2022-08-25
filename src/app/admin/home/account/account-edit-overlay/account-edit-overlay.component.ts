@@ -47,8 +47,7 @@ export class AccountEditOverlayComponent implements OnInit {
         role:value.role,
         balance:value.balance,
         classroom:value.classroom,
-        cartOrder:value.cartOrder,
-        orderInProgress:value.orderInProgress,
+        cartOrder:value.cartOrder
       }
       this.balance=(this.modelAccount!.balance/100).toFixed(2);
     }else{
@@ -61,8 +60,7 @@ export class AccountEditOverlayComponent implements OnInit {
         role:{id: 1, name: 'ROLE_USER'},
         balance:0,
         classroom:"",
-        cartOrder:null!,
-        orderInProgress:false,
+        cartOrder:null!
       }
       this._account=this.modelAccount;
     }

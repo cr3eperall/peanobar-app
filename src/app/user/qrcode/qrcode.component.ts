@@ -13,10 +13,7 @@ export class QrcodeComponent implements OnInit {
 
   ngOnInit(): void {
     let user;
-    this.loginService.getUser().subscribe((value)=>{
-      user=value;
-      this.qrcodeData=user.uuid;
-    });
+    this.qrcodeData=this.loginService.cachedUser!.uuid;
   }
 
 }

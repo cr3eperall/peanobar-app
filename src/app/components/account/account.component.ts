@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { LoginService } from './../../services/login.service';
 import { UserDTO } from './../../services/UserDTO';
@@ -15,7 +16,7 @@ export class AccountComponent implements OnInit {
   user?:UserDTO;
   disabled=false;
   message="";
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService, private route:ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.loginService.getUser().subscribe({
@@ -37,6 +38,7 @@ export class AccountComponent implements OnInit {
       next:(value)=>{
         if (value=="OK") {
           console.log("OK V");
+          this.router.navigate([""], {relativeTo:this.route.root});
         }else{
           console.log(value);
         }

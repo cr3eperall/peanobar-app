@@ -18,6 +18,7 @@ export class RechargeComponent implements OnInit {
   user:UserDTO|undefined;
   recharge:string|undefined|null="0";
   message="";
+  searchQ?:string;
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
@@ -62,6 +63,29 @@ export class RechargeComponent implements OnInit {
       this.getUser(result);
       this.scanSuccess=true;
       this.enabled=false;
+    }
+  }
+
+  search(){
+    if (this.searchQ!==undefined && this.searchQ!=="") {
+      this.userService.getUserByUsername(this.searchQ!).subscribe({
+        next:(value)=>{
+          this.user=value;
+          this.scanSuccess=true;
+          this.message="";
+          this.searchQ=""
+        },error:()=>{
+          this.message=$localize `User not found`
+        }
+      })
+    }else{
+      if (this.user!==undefined) {
+        this.scanSuccess=false;
+        this.enabled=true;
+        this.user=undefined;
+        this.recharge="0";
+        this.upd();
+      }
     }
   }
 

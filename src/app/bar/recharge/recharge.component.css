@@ -29,6 +29,21 @@
     border: 2px solid black;
 }
 
+#message{
+    background-color: orangered;
+}
+
+.search input{
+    margin: .5em 0;
+    padding: 3px;
+    height: 30px;
+    width: 200px;
+    font-size: large;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+
 .confirm{
     visibility: var(--hidden);
     font-size: large;

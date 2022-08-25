@@ -66,6 +66,8 @@ export class OrderOverlayComponent implements OnInit {
       },error:(err:HttpErrorResponse)=>{
         if(err.error.startsWith("Not enough balance")){
           this.message=$localize `Not enough balance`;
+        }else if (err.status==503) {
+          this.message=$localize `The bar is not accepting orders at this time`;
         }else{
           this.message=$localize `Error`;
         }
