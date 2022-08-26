@@ -28,6 +28,7 @@ export class ResetpwComponent implements OnInit {
         this.bgColor="orangered";
         this.message=$localize `Invalid Token`;
         this.router.navigate([""], {relativeTo:this.route.root});
+        return
       }
       if (value.get("token")!.length!==60) {
         this.bgColor="orangered";

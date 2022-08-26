@@ -30,6 +30,15 @@ export class AccountComponent implements OnInit {
   }
 
   changePw(){
+    if (this.password==undefined||this.password=="") {
+      return
+    }
+    if (this.oldPassword==undefined||this.oldPassword=="") {
+      return
+    }
+    if (this.passwordConfirm==undefined||this.passwordConfirm=="") {
+      return
+    }
     if (this.password!=this.passwordConfirm) {
       return;
     }

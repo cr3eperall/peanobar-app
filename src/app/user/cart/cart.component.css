@@ -18,8 +18,9 @@
     justify-content: space-between;
     padding: 0 1rem;
     align-items: center;
-    background-color: rgb(111, 165, 239);
+    background-color: hsl(215, 93%, 61%);
 }
+
 .total,.push{
     height: 100px;
 }
@@ -30,38 +31,4 @@
     width: 50%;
     font-size: larger;
     color: black;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    background-color: coral;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray ;
-}
-
-.total button:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
-}
-
-.total button:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
-    transition: .1s;
-}
-
-.total button:disabled{
-    background-color: rgb(164, 132, 120);
-    border-color: black;
-    border-width: 0px;
-    box-shadow: 0px 0px 0px gray;
-    transition: .1s;
 }

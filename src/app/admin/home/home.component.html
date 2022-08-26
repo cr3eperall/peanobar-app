@@ -11,13 +11,13 @@
     </div>
     <div class="accounts" [hidden]="users==undefined || mode!='account'">
         <div class="add">
-            <button (click)="onOpenAddAccount()" i18n>Add new Account</button>
+            <button class="orange-button-alt" (click)="onOpenAddAccount()" i18n>Add new Account</button>
         </div>
         <app-account *ngFor="let user of users" [user]="user" (edit)="openAccountEditor($event)"></app-account>
         <div *ngIf="searchModel===undefined||searchModel===''" class="selector">
             <div class="page">
-                <button [disabled]="prevDisabled" (click)="pagePrev()" id="prev" i18n>Previous</button>
-                <button [disabled]="nextDisabled" (click)="pageNext()" id="next" i18n>Next</button>
+                <button class="orange-button-alt" [disabled]="prevDisabled" (click)="pagePrev()" id="prev" i18n>Previous</button>
+                <button class="orange-button-alt" [disabled]="nextDisabled" (click)="pageNext()" id="next" i18n>Next</button>
             </div>
             <div class="size">
                 <select (change)="sizeChanged()" [(ngModel)]="size" name="size" id="size">

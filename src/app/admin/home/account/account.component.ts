@@ -1,5 +1,5 @@
 import { UserDTO } from './../../../services/UserDTO';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, HostBinding } from '@angular/core';
 
 @Component({
 	selector: 'app-account',
@@ -9,12 +9,20 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class AccountComponent implements OnInit {
 	@Input()
 	user!: UserDTO;
+	@Input()
+	inClassroom:boolean=false;
 	@Output()
 	edit = new EventEmitter<UserDTO>();
+	@HostBinding("style.--custom-shadow-color")
+	shadowColor:string="28deg 69% 52%";
 
 	constructor() {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		if (this.inClassroom) {
+			this.shadowColor="0deg 0% 42%";
+		}
+	}
 
 	onEdit() {
 		this.edit.emit(this.user!);

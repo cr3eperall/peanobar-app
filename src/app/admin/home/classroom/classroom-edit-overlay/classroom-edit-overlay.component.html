@@ -7,10 +7,10 @@
         <div class="editor">
             <h3 i18n>Classroom:</h3>
             <input type="text" name="classroom" id="classroom" [(ngModel)]="modelClassroom">
-            <button class="confirm" id="delete" (click)="deleteCls()" i18n>delete</button>
+            <button class="orange-button confirm" id="delete" (click)="deleteCls()" i18n>delete</button>
         </div>
         
         <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
-        <button *ngIf="modelClassroom!==undefined" [disabled]="isDisabled()" class="confirm" (click)="update()" i18n>Confirm</button>
+        <button *ngIf="modelClassroom!==undefined" [disabled]="isDisabled()" class="orange-button confirm" (click)="update()" i18n>Confirm</button>
     </div>
 </div>

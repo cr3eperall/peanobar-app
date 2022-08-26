@@ -1,4 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+	--button-gradient : linear-gradient(
+        75deg,
+        hsl(18deg 81% 58%) 0%,
+        hsl(17deg 84% 56%) 41%,
+        hsl(17deg 87% 54%) 63%,
+        hsl(17deg 89% 51%) 81%,
+        hsl(17deg 100% 48%) 100%
+      );
+
+    --button-gradient-hover: linear-gradient(
+        75deg,
+        hsl(16deg 79% 51%) 0%,
+        hsl(16deg 82% 50%) 29%,
+        hsl(16deg 86% 50%) 44%,
+        hsl(17deg 92% 49%) 56%,
+        hsl(17deg 100% 48%) 100%
+      );
+
+    --button-gradient-disabled: linear-gradient(
+        90deg,
+        rgb(164, 132, 120) 0%,
+        rgb(164, 132, 120) 100%
+      );
+
+      --button-shadow-color: 0deg 0% 42%;
+      --button-shadow-active:
+        0.5px 0.8px 1.1px hsl(var(--button-shadow-color) / 0.47),
+        1.9px 3.2px 4.3px -2.3px hsl(var(--button-shadow-color) / 0.51);
+      --button-shadow-hover:
+      0.6px 0.8px 1.1px hsl(var(--button-shadow-color) / 0.33),
+    2.6px 3.4px 4.6px -1.4px hsl(var(--button-shadow-color) / 0.3),
+    10px 13.2px 17.9px -2.8px hsl(var(--button-shadow-color) / 0.28);
+      --button-shadow-elevation-high:
+      0.5px 0.8px 0.8px hsl(var(--button-shadow-color) / 0.59),
+    1.2px 2px 1.9px -1.2px hsl(var(--button-shadow-color) / 0.48),
+    4.4px 7.4px 6.9px -2.3px hsl(var(--button-shadow-color) / 0.37),
+    12.7px 21.4px 20px -3.5px hsl(var(--button-shadow-color) / 0.26),
+    28.9px 48.6px 45.4px -4.6px hsl(var(--button-shadow-color) / 0.15);
+}
+
 body {
 	margin: 0;
 }
@@ -8,11 +49,69 @@ body {
 	font-family: sans-serif;
 }
 
-.button {
+button {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	cursor: pointer;
+}
+
+.orange-button{
+    border-radius: 10px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background: var(--button-gradient);
+    transition: .2s ease-in-out;
+    box-shadow: var(--button-shadow-elevation-high);
+}
+
+.orange-button:hover{
+    background: var(--button-gradient-hover);
+    box-shadow: var(--button-shadow-hover);
+    transition: .2s ease-in-out;
+}
+
+.orange-button:active{
+    box-shadow: var(--button-shadow-active);
+	background: var(--button-gradient-hover);
+    transition: .2s ease-in-out;
+}
+
+.orange-button:disabled{
+    background: var(--button-gradient-disabled);
+	box-shadow: none;
+    transition: .2s ease-in-out;
+}
+
+.orange-button-alt{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background: var(--button-gradient);
+  transition: .1s;
+  box-shadow: var(--shadow-elevation-high);
+}
+
+.orange-button-alt:hover{
+  background: var(--button-gradient-hover);
+  box-shadow: var(--shadow-elevation-medium);
+  transition: .1s;
+}
+
+.orange-button-alt:active{
+  background: var(--button-gradient-hover);
+  box-shadow: var(--shadow-elevation-low);
+  transition: .1s;
+}
+
+.orange-button-alt:disabled{
+  background: var(--button-gradient-disabled);
+  box-shadow: none;
+  transition: .1s;
+  cursor: default;
 }

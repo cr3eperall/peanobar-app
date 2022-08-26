@@ -57,31 +57,25 @@
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    background-color: coral;
+    background: var(--button-gradient);
     transition: .1s;
-    box-shadow: 0px 2px 10px gray ;
+    box-shadow: var(--shadow-elevation-high);
 }
 
 .confirm:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
+    background: var(--button-gradient-hover);
+    box-shadow: var(--shadow-elevation-medium);
     transition: .1s;
 }
 
 .confirm:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
+    background: var(--button-gradient-hover);
+    box-shadow: var(--shadow-elevation-low);
     transition: .1s;
 }
 
 .confirm:disabled{
-    background-color: rgb(164, 132, 120);
-    border-color: black;
-    border-width: 0px;
-    box-shadow: 0px 0px 0px gray;
+    background: var(--button-gradient-disabled);
+    box-shadow: none;
     transition: .1s;
 }

@@ -24,7 +24,7 @@ input[type=radio]:checked + label{
 }
 
 .product{
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 93%);
     border: 1px solid gray;
     border-radius: 1em;
     margin: 1em auto;
@@ -32,6 +32,7 @@ input[type=radio]:checked + label{
     align-items: center;
     display: grid;
     grid-template-columns: 50% auto 2em;
+    box-shadow: var(--shadow-elevation-medium);
 }
 
 #quantity{
@@ -66,38 +67,4 @@ input[type=radio]:checked + label{
     width: 90%;
     font-size: larger;
     color: black;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    background-color: coral;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray ;
-}
-
-.complete-order button:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
-}
-
-.complete-order button:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
-    transition: .1s;
-}
-
-.complete-order button:disabled{
-    background-color: rgb(164, 132, 120);
-    border-color: black;
-    border-width: 0px;
-    box-shadow: 0px 0px 0px gray;
-    transition: .1s;
 }

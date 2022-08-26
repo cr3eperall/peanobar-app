@@ -16,7 +16,7 @@ export class ProductComponent implements OnInit {
   @Output()
   edit=new EventEmitter();
   @HostBinding("style.--enabled")
-  enabled="solid";
+  enabled="none";
   constructor(private imageService:ImageService) { }
 
   ngOnInit(): void {

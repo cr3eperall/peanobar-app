@@ -4,10 +4,13 @@
     align-items: center;
     height: fit-content;
     justify-content: space-evenly;
-    border-style: solid;
     border-radius: 15px;
-    margin: 1em auto;
+    margin: 0 auto 1em auto;
     background-color: white;
+    box-shadow: 
+    0.4px 0.6px 0.7px hsl(var(--custom-shadow-color) / 0.62),
+    1.8px 2.5px 3px -1.7px hsl(var(--custom-shadow-color) / 0.51),
+    7.9px 11.2px 13.6px -3.4px hsl(var(--custom-shadow-color) / 0.4);
 }
 #edit{
     appearance: none;

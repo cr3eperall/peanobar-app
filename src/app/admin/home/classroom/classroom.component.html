@@ -12,6 +12,6 @@
         </div>
     </div>
     <div *ngIf="expanded&&users!==undefined" class="accounts">
-        <app-account *ngFor="let account of users!" [user]="account" (edit)="onEditAccount($event)"></app-account>
+        <app-account [inClassroom]="true" *ngFor="let account of users!" [user]="account" (edit)="onEditAccount($event)"></app-account>
     </div>
 </div>

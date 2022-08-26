@@ -40,8 +40,20 @@
     cursor: pointer;
     border-color: #767676;
     border-radius: 100%;
+    box-shadow: var(--shadow-elevation-low);
+    transition: .1s;
     border-style: solid;
     border-width: 2px;
+}
+
+.searchbox button:hover{
+    box-shadow: var(--shadow-elevation-medium);
+    transition: .1s;
+}
+
+.searchbox button:active{
+    box-shadow: none;
+    transition: .1s;
 }
 
 .row{
@@ -65,8 +77,8 @@
     border-style: solid;
     border-width: 1px;
     font-size: larger;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray;
+    transition: .2s;
+    box-shadow: var(--shadow-elevation-high);
 }
 
 .row #PANINO + label{
@@ -80,13 +92,18 @@
 }
 
 .row input[type=radio]:hover + label{
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
+    box-shadow: var(--shadow-elevation-medium);
+    transition: .2s;
+}
+
+.row input[type=radio]:active + label{
+    box-shadow: var(--shadow-elevation-low);
+    transition: .2s;
 }
 
 .row input[type=radio]:checked + label{
     transition: .1s;
-    box-shadow: 0px 0px 0px gray ;
+    box-shadow: var(--shadow-elevation-low);
 }
 
 .row #PANINO:checked + label{

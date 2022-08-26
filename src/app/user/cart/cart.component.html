@@ -5,6 +5,6 @@
 </div>
 <div class="total">
     <h2 i18n>Total: {{(total()/100).toFixed(2)}}€</h2>
-    <button [disabled]="orders.contents.length==0" (click)="order()" i18n>Order</button>
+    <button class="orange-button-alt" [disabled]="orders.contents.length==0" (click)="order()" i18n>Order</button>
 </div>
 <app-order-overlay [hidden]="openOrder" (closed)="close()"></app-order-overlay>

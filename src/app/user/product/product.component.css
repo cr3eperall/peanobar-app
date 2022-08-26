@@ -4,7 +4,9 @@
     align-items: center;
     height: 200px;
     margin: 1rem 0;
-    border-style: var(--enabled);
+    background-color: white;
+    /* border-style: var(--enabled); */
+    box-shadow: var(--shadow-elevation-medium);
     border-radius: 20px;
     font-family: sans-serif;
 }
@@ -65,32 +67,6 @@
     width: 50%;
     font-size: larger;
     color: black;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    background-color: coral;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray ;
-}
-
-.buy button:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
-}
-
-.buy button:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
-    transition: .1s;
 }
 
 @media screen and (max-width:700px) {

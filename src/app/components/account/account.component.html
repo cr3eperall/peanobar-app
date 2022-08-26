@@ -13,7 +13,7 @@
         <h3 i18n>Confirm Password</h3>
         <input type="password" autocomplete="none" name="passwordConfirm" (input)="checkPw()" pattern="(\d|(\d,\d{0,2}))" required [(ngModel)]="passwordConfirm">
         <h2 [hidden]="message.length==0" class="message">{{message}}</h2>
-        <button [disabled]="disabled" (click)="changePw()" type="submit" i18n>Change password</button>
+        <button class="orange-button-alt" [disabled]="disabled" (click)="changePw()" type="submit" i18n>Change password</button>
     </div>
     <h2 i18n *ngIf="user.role.id==1">Old orders</h2>
     <div class="orders" *ngIf="user.role.id==1">

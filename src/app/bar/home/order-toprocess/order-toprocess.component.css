@@ -3,10 +3,11 @@
 }
 .container{
     height: fit-content;
-    background-color: hsl(0, 0%, 90%);
-    border: 1px solid gray;
+    background-color: hsl(0, 0%, 93%);
+    border: .5px solid gray;
     border-radius: 1em;
     margin: 1em auto;
+    box-shadow: var(--shadow-elevation-medium);
 }
 
 :host:nth-child(even) > .container{

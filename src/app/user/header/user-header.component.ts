@@ -14,6 +14,8 @@ export class UserHeaderComponent implements OnInit {
     this.user=loginService.cachedUser;
   }
 
+  //TODO style message
+
   ngOnInit(): void {
     this.router.events.subscribe((value)=>{
       if (value instanceof NavigationEnd) {

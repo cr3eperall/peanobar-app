@@ -1,8 +1,8 @@
 <div class="container">
     <div class="selector">
         <div class="page">
-            <button [disabled]="prevDisabled" (click)="pagePrev()" id="prev" i18n>Previous</button>
-            <button [disabled]="nextDisabled" (click)="pageNext()" id="next" i18n>Next</button>
+            <button class="orange-button-alt" [disabled]="prevDisabled" (click)="pagePrev()" id="prev" i18n>Previous</button>
+            <button class="orange-button-alt" [disabled]="nextDisabled" (click)="pageNext()" id="next" i18n>Next</button>
         </div>
         <div class="size">
             <select (change)="sizeChanged()" [(ngModel)]="size" name="size" id="size">
@@ -18,7 +18,7 @@
             <h4 *ngIf="order.user!==undefined">{{order.user!.fullName}}</h4>
             <h4 *ngIf="order.user===undefined">[DELETED]</h4>
             <h4 i18n>Total: {{(order.order.total/100).toFixed(2)}}€</h4>
-            <button (click)="openOverlay(order)" i18n>Details</button>
+            <button class="orange-button" (click)="openOverlay(order)" i18n>Details</button>
         </div>
     </div>
 </div>

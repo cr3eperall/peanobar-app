@@ -3,13 +3,13 @@
         <a routerLink="home">
             <h1 class="title">PEANO BAR</h1>
         </a>
-        <a *ngIf="router.url !== '/login'&&router.url !== '/'&&router.url !== '/forgot'&&router.url !== '/resetpw'" routerLink="qr"><img src="assets/qrcode_white.png" alt="QR" height="30px"></a>
-        <a *ngIf="router.url !== '/login'&&router.url !== '/'&&router.url !== '/forgot'&&router.url !== '/resetpw'" routerLink="cart"><img src="assets/cart2.png" alt="Cart" i18n-alt height="30px"></a>
+        <a *ngIf="router.url!=='/'&&!router.url.startsWith('/login') &&!router.url.startsWith('/it')&&!router.url.startsWith('/en')&&!router.url.startsWith('/forgot')&&!router.url.startsWith('/resetpw')" routerLink="qr"><img src="assets/qrcode_white.png" alt="QR" height="30px"></a>
+        <a *ngIf="router.url!=='/'&&!router.url.startsWith('/login') &&!router.url.startsWith('/it')&&!router.url.startsWith('/en')&&!router.url.startsWith('/forgot')&&!router.url.startsWith('/resetpw')" routerLink="cart"><img src="assets/cart2.png" alt="Cart" i18n-alt height="30px"></a>
     </div>
     <div class="right">
-        <a *ngIf="router.url !== '/login'&&router.url !== '/'&&router.url !== '/forgot'&&router.url !== '/resetpw'" routerLink="account">Account</a>
-        <a *ngIf="router.url !== '/login'&&router.url !== '/'&&router.url !== '/forgot'&&router.url !== '/resetpw'" href="logout"><img src="assets/logout2.png" alt="Logout" i18n-alt height="30px"></a>
-        <div *ngIf="router.url !== '/login'&&router.url !== '/'&&router.url !== '/forgot'&&router.url !== '/resetpw' && user!==undefined">
+        <a *ngIf="router.url!=='/'&&!router.url.startsWith('/login') &&!router.url.startsWith('/it')&&!router.url.startsWith('/en')&&!router.url.startsWith('/forgot')&&!router.url.startsWith('/resetpw')" routerLink="account">Account</a>
+        <a *ngIf="router.url!=='/'&&!router.url.startsWith('/login') &&!router.url.startsWith('/it')&&!router.url.startsWith('/en')&&!router.url.startsWith('/forgot')&&!router.url.startsWith('/resetpw')" href="logout"><img src="assets/logout2.png" alt="Logout" i18n-alt height="30px"></a>
+        <div *ngIf="router.url!=='/'&&!router.url.startsWith('/login') &&!router.url.startsWith('/it')&&!router.url.startsWith('/en')&&!router.url.startsWith('/forgot')&&!router.url.startsWith('/resetpw') && user!==undefined">
             <p i18n>balance:</p>
             <p>{{(user!.balance/100).toFixed(2)}}€</p>
         </div>

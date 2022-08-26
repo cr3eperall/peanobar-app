@@ -35,50 +35,17 @@
     border-radius: 10px;
     border-style: solid;
 }
-
+.add{
+    overflow-y: hidden;
+}
 .add button{
-    margin: auto 0;
+    margin: 0 0 1em 0;
     height: fit-content;
     min-height: 30px;
     width: fit-content;
     min-width: 200px;
     font-size: large;
     color: black;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-radius: 10px;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    background-color: coral;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray;
-    cursor: pointer;
-}
-
-.add button:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
-}
-
-.add button:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
-    transition: .1s;
-}
-
-.add button:disabled{
-    background-color: rgb(164, 132, 120);
-    border-color: black;
-    border-width: 0px;
-    box-shadow: 0px 0px 0px gray;
-    transition: .1s;
 }
 
 .selector{
@@ -93,18 +60,9 @@
     margin-right: 1em;
 }
 
-.page button{
-    width: 90px !important;
-}
-
 .size{
     margin: auto 0;
     margin-left: 1em;
-}
-
-.page button{
-    height: 30px !important;
-    font-size: medium !important;
 }
 
 #prev{
@@ -122,6 +80,9 @@
 }
 
 .page button{
+    width: 90px !important;
+    height: 30px !important;
+    font-size: medium !important;
     text-align: center;
     color: black;
     height: 30px;
@@ -129,37 +90,7 @@
     font-size: large;
     margin:auto 0;
     padding: 0;
-    border-radius: 20px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    background-color: coral;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray ;
-}
-
-.page button:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
-}
-
-.page button:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
-    transition: .1s;
-}
-
-.page button:disabled{
-    background-color: rgb(164, 132, 120);
-    border-color: black;
-    border-width: 0px;
-    box-shadow: 0px 0px 0px gray;
-    transition: .1s;
+    border-radius: 20px !important;
 }
 
 @media screen and (max-width:500px) {

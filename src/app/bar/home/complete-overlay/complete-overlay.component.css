@@ -118,29 +118,7 @@
     text-align: center;
     color: black;
     padding: 0;
-    border-radius: 20px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    background-color: coral;
-    transition: .1s;
-    box-shadow: 0px 2px 10px gray ;
-}
-
-.order:hover{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(243, 121, 76);
-    box-shadow: 0px 0px 10px gray ;
-    transition: .1s;
-}
-
-.order:active{
-    border-color: gray;
-    border-width: 2px;
-    background-color: rgb(235, 94, 43);
-    box-shadow: 0px 0px 0px gray ;
-    transition: .1s;
+    border-radius: 20px !important;
 }
 
 @media (max-width:500px), (max-height:450px)  {
