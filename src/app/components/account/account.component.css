@@ -26,7 +26,8 @@
 }
 
 .password input{
-    width: 300px;
+    width: auto;
+    max-width: 300px;
     font-size: large;
     padding: 5px;
     border-radius: 5px;
@@ -39,7 +40,7 @@
     margin: 1em 0;
     padding: 5px;
     height: 40px;
-    width: 315px;
+    max-width: 315px;
     font-size: larger;
     color: black;
 }

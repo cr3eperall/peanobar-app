@@ -8,11 +8,9 @@
     border-radius: 1em;
     margin: 1em auto;
     box-shadow: var(--shadow-elevation-medium);
+    overflow: hidden;
 }
 
-:host:nth-child(even) > .container{
-    background-color: hsl(0, 0%, 82%);
-}
 
 .row{
     display: grid;
@@ -22,15 +20,20 @@
 }
 
 .owner{
-    min-width: 200px;
     display: flex;
     flex-direction: column;
+    white-space: wrap;
 }
 
 .order-details{
     display: flex;
     flex-direction: column;
     align-items: center;
+    white-space: wrap;
+}
+
+.order-details > *{
+    text-align: center;
 }
 
 .row h3{
@@ -90,6 +93,10 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 1em;
+}
+
+.item:nth-child(odd){
+    background-color: hsl(0, 0%, 100%);
 }
 
 .item h3:first-child{

@@ -114,7 +114,8 @@ export class EditOverlayComponent implements OnInit {
       name:this.modelProduct!.name,
       cost:Math.floor(Number.parseFloat(this.modelProduct!.cost)*100),
       img:this.modelProduct!.img,
-      type:this.modelProduct!.type
+      type:this.modelProduct!.type,
+      disabled:this._product?.disabled
     }
     return editedProduct;
   }

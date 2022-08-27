@@ -16,13 +16,12 @@ export class OrderOverlayComponent implements OnInit {
   orders?:OrderDTO;
   @Output()
   closed=new EventEmitter();
-  @HostBinding("style.--prod-hidden")
-  prodHidden="visible";
   @HostBinding("style.--msg-bg-color")
   bgColor="green";
   @HostBinding("style.--msg-color")
   msgColor="black"
   message=$localize `Order Sent`;
+  buttonDisabled=true;
 
   @HostBinding("style.--hidden")
   private _hidden="hidden";
@@ -38,27 +37,27 @@ export class OrderOverlayComponent implements OnInit {
   public set hidden(hid : string) {
     this._hidden = hid;
     if (hid=="visible") {
-      this.prodHidden="visible";
+      this.buttonDisabled=false;
       this.message="";
       this.bgColor="transparent";
       this.cartComponent.updateCart().subscribe((value)=>{
         this.orders=value;
       });
+    }else{
+      this.buttonDisabled=true;
     }
   }  
 
   close(){
-    this.prodHidden="hidden"
     this.closed.emit();
   }
 
   order(){
-    this.prodHidden="hidden";
     this.orderService.sendOrder().subscribe({
       next: (value)=>{
         if(value.status==OrderStatus.IN_PROGRESS){
           this.message=$localize `Order Sent`;
-          this.prodHidden="hidden";
+          this.buttonDisabled=true;
           this.bgColor="green";
           this.msgColor="black";
           timer(1000).subscribe(()=>{this.close();window.location.reload();});
@@ -71,7 +70,7 @@ export class OrderOverlayComponent implements OnInit {
         }else{
           this.message=$localize `Error`;
         }
-        this.prodHidden="visible";
+        this.buttonDisabled=false;
         this.bgColor="rgb(221, 75, 57)";
         this.msgColor="black";
         console.log(err);

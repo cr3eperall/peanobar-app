@@ -16,6 +16,6 @@
         </div>
         <h2 class="message">{{message}}</h2>
         <h2 class="total" i18n>Total: {{(orders.total/100).toFixed(2)}}€</h2>
-        <button [disabled]="prodHidden=='hidden'" class="orange-button order" (click)="order()" i18n>Order</button>
+        <button [disabled]="buttonDisabled" class="orange-button order" (click)="order()" i18n>Order</button>
     </div>
 </div>

@@ -65,6 +65,13 @@ export class HomeComponent implements OnInit {
     this.updatePrevNextDisabled();
   }
 
+  onEmpty(){
+    if (this.searchModel==undefined||this.searchModel==="") {
+      this.updateUsers();
+      this.updateClassrooms();
+    }
+  }
+
   onSearch(){
     if (this.searchModel==undefined||this.searchModel==="") {
       this.updateUsers();

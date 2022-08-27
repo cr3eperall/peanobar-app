@@ -7,7 +7,7 @@
             <input type="radio" name="menu" id="classroom" value="classroom" (change)="onChange($event)">
             <label for="classroom" i18n>Classroom</label>    
         </div>
-        <input type="text" name="search" id="search" i18n-placeholder placeholder="search" [(ngModel)]="searchModel" autocapitalize="none" (keyup.enter)="onSearch()">
+        <input type="text" name="search" id="search" i18n-placeholder placeholder="search" [(ngModel)]="searchModel" autocapitalize="none" (keyup.enter)="onSearch()" (input)="onEmpty()">
     </div>
     <div class="accounts" [hidden]="users==undefined || mode!='account'">
         <div class="add">
