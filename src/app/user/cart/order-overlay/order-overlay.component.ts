@@ -73,7 +73,6 @@ export class OrderOverlayComponent implements OnInit {
         this.buttonDisabled=false;
         this.bgColor="rgb(221, 75, 57)";
         this.msgColor="black";
-        console.log(err);
       }});
   }
 

@@ -55,6 +55,7 @@
     justify-content: center;
 	text-align: justify;
     resize: none;
+    cursor: pointer;
 }
 #completed:checked{
     background-color: dodgerblue;
@@ -78,6 +79,7 @@
     transform: rotate(-90deg);
     transition-duration: .1s;
     transition-timing-function: cubic-bezier();
+    cursor: pointer;
 }
 
 .extended.ext{

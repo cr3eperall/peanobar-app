@@ -1,6 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from './../../services/login.service';
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   messageVisibility="hidden"
   disabled=false;
 
-  constructor(private loginService:LoginService, private router:Router, private route: ActivatedRoute) {
+  constructor(private location: Location,private loginService:LoginService, private router:Router, private route: ActivatedRoute) {
   }
   
   login(){
@@ -43,16 +44,25 @@ export class LoginComponent implements OnInit {
     this.loginService.getUser().subscribe((value)=>{
       switch (value.role.id) {
         case 1:
-          this.router.navigate(["home"], {relativeTo:this.route.root});
+          this.location.replaceState("/home");
+          //TODO workaround, needs to be fixed by removing css ::ng-deep from header components
+          window.location.reload();
+          //this.router.navigate(["home"], {relativeTo:this.route.root});
           break;
         case 2:
-          this.router.navigate(["bar/home"], {relativeTo:this.route.root});
+          this.location.replaceState("/bar/home");
+          window.location.reload();
+          //this.router.navigate(["bar/home"], {relativeTo:this.route.root});
           break;
         case 3:
-          this.router.navigate(["admin/home"], {relativeTo:this.route.root});
+          this.location.replaceState("/admin/home");
+          window.location.reload();
+          //this.router.navigate(["admin/home"], {relativeTo:this.route.root});
           break;
         default:
-          this.router.navigate(["home"], {relativeTo:this.route.root});
+          this.location.replaceState("/home");
+          window.location.reload();
+          //this.router.navigate(["home"], {relativeTo:this.route.root});
           break;
       }
     })

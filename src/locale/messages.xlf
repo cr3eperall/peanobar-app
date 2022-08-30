@@ -196,7 +196,7 @@
       </trans-unit>
       <trans-unit id="187187500641108332" datatype="html">
         <source>
-          <x id="INTERPOLATION" equiv-text="{{mode==&apos;edit&apos; ? (&quot;Edit &quot;+account!.username) : (&quot;Add Account&quot;)}}"/>
+          <x id="INTERPOLATION" equiv-text="{{showFailed ? failedUpdate_localized : update_localized }}"/>
         </source>
       </trans-unit>
       <trans-unit id="2265578229938417504" datatype="html">
@@ -324,6 +324,51 @@
       </trans-unit>
       <trans-unit id="8056364825023681713" datatype="html">
         <source>disable</source>
+      </trans-unit>
+      <trans-unit id="1594358080110738602" datatype="html">
+        <source>Adds new accounts if no existing account has the same username; does nothing if username already exists</source>
+      </trans-unit>
+      <trans-unit id="2917923382333289576" datatype="html">
+        <source>Add Accounts with CSV</source>
+      </trans-unit>
+      <trans-unit id="360306808317429731" datatype="html">
+        <source>Updates already existing accounts with matching usernames; does nothing if no matching username is found</source>
+      </trans-unit>
+      <trans-unit id="4021752662928002901" datatype="html">
+        <source>Update</source>
+      </trans-unit>
+      <trans-unit id="4145496584631696119" datatype="html">
+        <source>Role</source>
+      </trans-unit>
+      <trans-unit id="5248717555542428023" datatype="html">
+        <source>Username</source>
+      </trans-unit>
+      <trans-unit id="6932865105766151309" datatype="html">
+        <source>Upload</source>
+      </trans-unit>
+      <trans-unit id="7315714079098881460" datatype="html">
+        <source>email</source>
+      </trans-unit>
+      <trans-unit id="8782778013987537094" datatype="html">
+        <source>Updates already existing accounts with matching usernames; adds new accounts if no matching username is found</source>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="7531413747798356984" datatype="html">
+        <source>Mode: </source>
+      </trans-unit>
+      <trans-unit id="1044086669292507510" datatype="html">
+        <source>Users to update</source>
+      </trans-unit>
+      <trans-unit id="1259421956660976189" datatype="html">
+        <source>Add Account</source>
+      </trans-unit>
+      <trans-unit id="7565155156017938502" datatype="html">
+        <source>Edit </source>
+      </trans-unit>
+      <trans-unit id="8156239328548103279" datatype="html">
+        <source>Failed user updates:</source>
       </trans-unit>
     </body>
   </file>

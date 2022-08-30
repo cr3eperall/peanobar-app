@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   completedOrders:OrderDTO[]=[];
   constructor(private orderService:OrderService, private userService:UserService) { }
   //TODO add media query to html;
-  //probably needs more testing
   ngOnInit(): void {
     this.orders=[];
     this.products=[];

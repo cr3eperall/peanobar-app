@@ -13,11 +13,11 @@
 }
 
 .container{
-    height: 60vh;
+    height: 80vh;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    width: 60vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -59,6 +59,44 @@
     height: 100%;
 }
 
+#updateh2{
+    margin-right: auto;
+    margin-left: 7%;
+}
+.accounts{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.accounts, .accounts th, .accounts td{
+    border: 1px solid;
+}
+
+.accounts td, .accounts th{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.password{
+    width: 100%;
+    max-width: fit-content;
+    display: block;
+    min-width: fit-content;
+    appearance: none;
+    border:none;
+    text-align: center;
+    cursor: pointer;
+}
+.password[type="password"]::selection{
+    appearance: none;
+}
+.password[type="text"]{
+    cursor: text;
+}
+.password:focus{
+    outline: none;
+}
+
 .message{
     background-color: var(--msg-bg-color);
     color: var(--msg-color);
@@ -67,12 +105,42 @@
     margin: 0;
 }
 
-#delete{
-    width: fit-content !important;
-    height: 25px;
-    padding: 0 10px;
-    font-size: 20px;
-    margin: 10px 10px auto 0px;
+.progress-outer{
+    border: 1px solid #b0b0b0;
+    border-radius: 4px;
+    margin:10px 0;
+    height: 30px;
+    width: 90%;
+    background-color: lightgrey;
+}
+.progress-inner{
+    background-color: forestgreen;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
+    width: var(--progress);
+    height: 100%;
+}
+.progress-inner-failed{
+    background-color: orangered;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
+    width: var(--progress);
+    height: 100%;
+}
+
+.mode{
+    margin-right: auto;
+    margin-left: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#description{
+    white-space: pre-line;
+    text-align: start;
 }
 
 .confirm{
@@ -80,7 +148,6 @@
     font-size: 25px;
     height: 50px;
     width: 90%;
-    text-align: center;
     margin: 10px auto;
     text-align: center;
     color: black;
@@ -96,41 +163,9 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
 
-
-.editor input{
-    width: 90%;
-    font-size: large;
-    border-radius: 10px;
-    border-style: solid;
-}
-
-.editor select{
-    font-size: large;
-    border-radius: 10px;
-}
-
-.bal{
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-}
-
-@media (max-width:900px)  {
-    .editor input{
-        width: 90%;
-    }
-}
-
-@media (min-width:900px) {
-    
-    .editor{
-        width: 500px;
-    }
-}
 
 @media screen and (max-height:850px) {
     .container{

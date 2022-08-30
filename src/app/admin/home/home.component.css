@@ -22,6 +22,7 @@
     user-select: none;
     color: gray;
     font-size: larger;
+    cursor: pointer;
 }
 .mode input[type=radio]:checked + label{
     color: black;
@@ -37,6 +38,8 @@
 }
 .add{
     overflow-y: hidden;
+    display: flex;
+    gap: 1em;
 }
 .add button{
     margin: 0 0 1em 0;
@@ -46,6 +49,9 @@
     min-width: 200px;
     font-size: large;
     color: black;
+}
+.add input[type="file"]{
+    display: none;
 }
 
 .selector{

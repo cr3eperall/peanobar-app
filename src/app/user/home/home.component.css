@@ -79,6 +79,7 @@
     font-size: larger;
     transition: .2s;
     box-shadow: var(--shadow-elevation-high);
+    cursor: pointer;
 }
 
 .row #PANINO + label{

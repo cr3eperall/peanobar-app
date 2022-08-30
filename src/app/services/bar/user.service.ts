@@ -133,7 +133,7 @@ export class UserService {
 
   deleteClassroom(uuid:string):Observable<{}>{
     const headers=this.loginService.getHeaders();
-    return this.http.delete(this.apiUrl+"/user/classroom?uuid="+uuid,{headers});
+    return this.http.delete(this.apiUrl+"/user/classroom?classroom="+uuid,{headers});
   }
   
 }

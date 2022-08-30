@@ -17,6 +17,7 @@ input[type=radio] + label{
     user-select: none;
     color: gray;
     font-size: larger;
+    cursor: pointer;
 }
 input[type=radio]:checked + label{
     color: black;

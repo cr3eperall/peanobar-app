@@ -17,7 +17,7 @@
             </select>
             <h3 i18n>Image:</h3>
             <app-img-selector [selectedImg]="modelProduct?.img" (onSelected)="select($event)"></app-img-selector>
-            <button *ngIf="mode==='Edit'" class="orange-button confirm" id="delete" (click)="deletePr()" i18n>{{(product?.disabled!==undefined && !product?.disabled) ? disableLocalized : enableLocalized}}</button>
+            <button *ngIf="mode==='Edit'" class="orange-button confirm" id="delete" (click)="deletePr()" i18n>{{(product?.disabled!==undefined && product?.disabled) ? enableLocalized : disableLocalized}}</button>
         </div>
         <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
         <button *ngIf="product!==undefined" [disabled]="isDisabled()" class="orange-button confirm" (click)="update()" i18n>Confirm</button>

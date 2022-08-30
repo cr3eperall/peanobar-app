@@ -1,0 +1,46 @@
+<div *ngIf="users!==undefined" class="overlay">
+    <div class="container">
+        <div class="top">
+            <h2 i18n>Add Accounts with CSV</h2>
+            <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
+        </div>
+        <h2 i18n id="updateh2">{{showFailed ? failedUpdate_localized : update_localized }}</h2>
+        <div class="editor">
+            <table class="accounts">
+                <tr>
+                    <th i18n>Name</th>
+                    <th i18n>Username</th>
+                    <th i18n>email</th>
+                    <th i18n>Classroom</th>
+                    <th i18n>Role</th>
+                    <th *ngIf="!showFailed" >Password</th>
+                    <th *ngIf="showFailed" i18n>Error</th>
+                </tr>
+                <tr *ngFor="let user of users">
+                    <td>{{user.user.fullName}}</td>
+                    <td>{{user.user.username}}</td>
+                    <td>{{user.user.email}}</td>
+                    <td>{{user.user.classroom}}</td>
+                    <td>{{getRole(user.user.role.id)}}</td>
+                    <td *ngIf="!showFailed" ><input type="password" class="password" (mousedown)="mouseDown($event)" (click)="onClick($event)" [value]="user.password" readonly></td>
+                    <td *ngIf="showFailed" >{{errorMap.get(user.user)!}}</td>
+                </tr>
+            </table>
+        </div>
+        <div *ngIf="completed>0" class="progress-outer">
+            <div *ngIf="failed===undefined" class="progress-inner"></div>
+            <div *ngIf="failed!==undefined" class="progress-inner-failed"></div>
+        </div>
+        <div class="mode">
+            <h3 i18n>Mode: </h3>
+            <select name="uploadMode" id="uploadMode" [(ngModel)]="mode">
+                <option id="1" value="1" i18n>Update</option>
+                <option id="2" value="2" i18n>Add</option>
+                <option id="3" value="3" i18n>Edit</option>
+            </select>
+            <p id="description">{{getDescription()}}</p>
+        </div>
+        <h2 *ngIf="message.length>0" class="message">{{message}}</h2>
+        <button *ngIf="users!==undefined" [disabled]="isDisabled()" class="orange-button confirm" (click)="update()" i18n>Upload</button>
+    </div>
+</div>

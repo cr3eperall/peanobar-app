@@ -12,6 +12,8 @@
     <div class="accounts" [hidden]="users==undefined || mode!='account'">
         <div class="add">
             <button class="orange-button-alt" (click)="onOpenAddAccount()" i18n>Add new Account</button>
+            <input class="orange-button-alt" type="file" (input)="openCSV($event)" (click)="resetFile($event)" #fileUpload>
+            <button class="orange-button-alt" (click)="fileUpload.click()" i18n>Add Accounts with CSV</button>
         </div>
         <app-account *ngFor="let user of users" [user]="user" (edit)="openAccountEditor($event)"></app-account>
         <div *ngIf="searchModel===undefined||searchModel===''" class="selector">
@@ -27,10 +29,11 @@
                 </select>
             </div>
         </div>
+        <app-account-csv-add-overlay [users]="csvUsers" [completed]="csvUploadCompleted" [failed]="csvUploadFailed" (closed)="onClosedCSVOverlay()" (upload)="onCSVUpload($event)"></app-account-csv-add-overlay>
     </div>
     <div class="classrooms" [hidden]="classrooms==undefined || mode!='classroom'">
         <app-classroom *ngFor="let classroom of classrooms" [classroom]="classroom" (editAccount)="openAccountEditor($event)" (editClassroom)="openClassroomEditor($event)"></app-classroom>
-        <app-classroom-edit-overlay [classroom]="classroomToEdit" (closed)="onClosedClassroomEditor()" (updated)="onClassroomEdited($event)"></app-classroom-edit-overlay>
+        <app-classroom-edit-overlay [classroom]="classroomToEdit" (closed)="onClosedClassroomEditor()" (updated)="onClassroomEdited($event)" (delete)="deleteClassroom($event)"></app-classroom-edit-overlay>
     </div>
     <app-account-edit-overlay [account]="accountToEdit" (closed)="onClosedAccountEditor()" (updated)="onAccountEdited($event)" (delete)="deleteUser($event)"></app-account-edit-overlay>
 </div>

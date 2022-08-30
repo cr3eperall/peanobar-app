@@ -15,9 +15,6 @@ import { ForgotComponent } from './components/forgot/forgot.component';
 import { ResetpwComponent } from './components/resetpw/resetpw.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
-//TODO add cursor to css
-//TODO add csv parser to add products and accounts
-
 @NgModule({
   declarations: [
     AppComponent,

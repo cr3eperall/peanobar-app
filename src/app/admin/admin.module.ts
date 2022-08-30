@@ -12,6 +12,7 @@ import { ClassroomComponent } from './home/classroom/classroom.component';
 import { AccountEditOverlayComponent } from './home/account/account-edit-overlay/account-edit-overlay.component';
 import { ClassroomEditOverlayComponent } from './home/classroom/classroom-edit-overlay/classroom-edit-overlay.component';
 import { OrderOverlayComponent } from './orders/order-overlay/order-overlay.component';
+import { AccountCsvAddOverlayComponent } from './home/account/account-csv-add-overlay/account-csv-add-overlay.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { OrderOverlayComponent } from './orders/order-overlay/order-overlay.comp
     ClassroomComponent,
     AccountEditOverlayComponent,
     ClassroomEditOverlayComponent,
-    OrderOverlayComponent
+    OrderOverlayComponent,
+    AccountCsvAddOverlayComponent
   ],
   imports: [
     CommonModule,

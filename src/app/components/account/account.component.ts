@@ -47,7 +47,7 @@ export class AccountComponent implements OnInit {
       next:(value)=>{
         if (value=="OK") {
           console.log("OK V");
-          this.router.navigate([""], {relativeTo:this.route.root});
+          this.router.navigate([""]);
         }else{
           console.log(value);
         }

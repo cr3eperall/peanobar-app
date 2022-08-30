@@ -1,3 +1,5 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { CsvUploadService } from './../../services/bar/csv-upload.service';
 import { UserService } from './../../services/bar/user.service';
 import { UserDTO } from './../../services/UserDTO';
 import { Component, OnInit } from '@angular/core';
@@ -8,12 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  //TODO add button to delete account/classroom
   mode="account";
   users?:UserDTO[]=undefined;
   classrooms?:(string|undefined)[]=undefined;
   accountToEdit:UserDTO|undefined|null=undefined;
   classroomToEdit:string|undefined|null=undefined;
+  
+  csvUsers:{ user: UserDTO; password: string; }[]|undefined=undefined;
+  csvUploadCompleted:number=0;
+  csvUploadFailed?:{user:UserDTO,error:HttpErrorResponse}[]=undefined;
 
   searchModel?="";
   prevDisabled=true;
@@ -22,17 +27,12 @@ export class HomeComponent implements OnInit {
   page=1;
   nAccounts=0;
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private csvService:CsvUploadService) { }
 
   ngOnInit(): void {
-    this.userService.countUsers().subscribe((value)=>{
-      this.nAccounts=value;
-      this.updatePrevNextDisabled();
-    })
+    this.classrooms=[];
+    this.updateClassrooms();
     this.updateUsers();
-    this.userService.getAllClassrooms().subscribe((value)=>{
-      this.classrooms=value;
-    })
   }
 
   updatePrevNextDisabled(){
@@ -105,6 +105,11 @@ export class HomeComponent implements OnInit {
     this.classroomToEdit=undefined;
   }
   
+  onClosedCSVOverlay(){
+    this.csvUsers=undefined;
+    this.csvUploadCompleted=0;
+    this.csvUploadFailed=undefined;
+  }
   
   openAccountEditor(user:UserDTO){
     this.accountToEdit=user;
@@ -114,12 +119,33 @@ export class HomeComponent implements OnInit {
     this.classroomToEdit=classroom;
   }
   
+  resetFile(e:Event){
+    const target = (e.target as HTMLInputElement);
+    target.files=null;
+    target.value="";
+  }
+
+  openCSV(e:Event){
+    const file = (e.target as HTMLInputElement).files?.item(0)!;
+    this.csvService.readFile(file).subscribe((value)=>{
+      this.csvService.parseCSVintoUsers(value).subscribe({
+        next:(value)=>{
+          this.csvUsers=value;
+        },error:(err)=>{
+          if (err instanceof Error) {
+            alert(err.message);
+          }
+        }
+      })
+    })
+    
+  }
   
   onOpenAddAccount(){
     this.accountToEdit=null;
   }
   
-  onAccountEdited(event:{user:UserDTO,mode:"edit"|"add",password?:string}){
+  onAccountEdited(event:{oldUser:UserDTO,user:UserDTO,mode:"edit"|"add",password?:string}){
     if (event.mode==='add') {
       if (event.password!==undefined) {
         this.userService.createUser(event.user,event.password).subscribe((value)=>{
@@ -131,26 +157,23 @@ export class HomeComponent implements OnInit {
         })
       }
     }else{
-      for (let i = 0; i < this.users!.length; i++) {
-        if (this.users![i].uuid===event.user.uuid) {
-          const q=this.userService.updateUser(this.users![i],event.user);
-          if (event.user.balance!=this.users![i].balance) {
-            this.userService.updateBalance(this.users![i].uuid,event.user.balance).subscribe((value)=>{
+          const q=this.userService.updateUser(event.oldUser,event.user);
+          if (event.user.balance!=event.oldUser.balance) {
+            this.userService.updateBalance(event.oldUser.uuid,event.user.balance).subscribe((value)=>{
               q.subscribe((value)=>{
-                this.users![i]=value;
+                this.updateUsers();
                 this.accountToEdit=undefined;
                   this.updateClassrooms();
               });
             })
           }else{
             q.subscribe((value)=>{
-              this.users![i]=value;
+              this.updateUsers();
               this.accountToEdit=undefined;
-                this.updateClassrooms();
+              this.updateClassrooms();
             });
           }
-        }
-      }
+        
     }
   }
   
@@ -162,6 +185,28 @@ export class HomeComponent implements OnInit {
         this.classroomToEdit=undefined;
       });
     }
+  }
+
+  onCSVUpload(users:{ user: UserDTO; password: string; }[]){
+    let failed:{ user: UserDTO; error: HttpErrorResponse; }[]=[];
+      this.csvService.uploadUsers(users,"update").subscribe({
+        next:(value)=>{
+          if (value.progress>0) {
+            this.csvUploadCompleted=value.progress;
+          }
+          if(value.progress==100){
+            if (failed.length==0) {
+              this.onClosedCSVOverlay();
+            }else{
+              this.csvUploadFailed=failed;
+            }
+            this.updateUsers();
+            this.updateClassrooms();
+          }else if (value.progress==-1 && !value.success) {
+            failed!.push({user:value.user,error:value.error!})
+          }
+        }
+      })
   }
   
   updateClassrooms(){
@@ -177,6 +222,10 @@ export class HomeComponent implements OnInit {
     this.userService.getAll(this.page,this.size).subscribe((value)=>{
       this.users=value;
     })
+    this.userService.countUsers().subscribe((value)=>{
+      this.nAccounts=value;
+      this.updatePrevNextDisabled();
+    })
   }
   onChange(event:Event){
     const e=event.target as HTMLInputElement;
@@ -188,6 +237,7 @@ export class HomeComponent implements OnInit {
   deleteUser(user:UserDTO){
     this.userService.deleteUser(user.uuid).subscribe((value)=>{
       this.updateUsers();
+      this.updateClassrooms()
       this.accountToEdit=undefined;
     });
   }
@@ -195,6 +245,7 @@ export class HomeComponent implements OnInit {
   deleteClassroom(classroom:string){
     this.userService.deleteClassroom(classroom).subscribe((value)=>{
       this.updateClassrooms();
+      this.updateUsers()
       this.classroomToEdit=undefined;
     })
   }

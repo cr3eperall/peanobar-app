@@ -1,7 +1,7 @@
 <div *ngIf="modelAccount!==undefined" class="overlay">
     <div class="container">
         <div class="top">
-            <h2 i18n>{{mode=='edit' ? ("Edit "+account!.username) : ("Add Account")}}</h2>
+            <h2 i18n>{{mode=='edit' ? (editAccount_localized+account!.username) : (addAccount_localized)}}</h2>
             <button class="x" (click)="close()"><img src="assets/chiudi.png" alt="close" i18n-alt></button>
         </div>
         <div class="editor">

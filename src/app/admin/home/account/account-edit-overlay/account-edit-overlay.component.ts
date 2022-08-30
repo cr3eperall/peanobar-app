@@ -19,10 +19,12 @@ export class AccountEditOverlayComponent implements OnInit {
   @Output()
   closed=new EventEmitter();
   @Output()
-  updated=new EventEmitter<{user:UserDTO,mode:"edit"|"add",password?:string}>();
+  updated=new EventEmitter<{oldUser:UserDTO,user:UserDTO,mode:"edit"|"add",password?:string}>();
   @Output()
   delete=new EventEmitter<UserDTO>();
   
+  addAccount_localized=$localize `Add Account`;
+  editAccount_localized=$localize `Edit `;
   constructor() { }
   
   ngOnInit(): void {
@@ -62,6 +64,7 @@ export class AccountEditOverlayComponent implements OnInit {
         classroom:"",
         cartOrder:null!
       }
+      this.password="";
       this._account=this.modelAccount;
     }
   }
@@ -73,9 +76,9 @@ export class AccountEditOverlayComponent implements OnInit {
 
   update(){
     if (this.mode==='add') {
-      this.updated.emit({user:this.modelAccount as UserDTO,mode:this.mode,password:this.password!});
+      this.updated.emit({oldUser:this.account!,user:this.modelAccount as UserDTO,mode:this.mode,password:this.password!});
     }else{
-      this.updated.emit({user:this.modelAccount as UserDTO,mode:this.mode});
+      this.updated.emit({oldUser:this.account!,user:this.modelAccount as UserDTO,mode:this.mode});
     }
   }
 

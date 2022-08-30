@@ -252,7 +252,7 @@
       </trans-unit>
       <trans-unit id="187187500641108332" datatype="html">
         <source>
-          <x id="INTERPOLATION" equiv-text="{{mode==&apos;edit&apos; ? (&quot;Edit &quot;+account!.username) : (&quot;Add Account&quot;)}}"/>
+          <x id="INTERPOLATION" equiv-text="{{showFailed ? failedUpdate_localized : update_localized }}"/>
         </source>
         <target state="new">
           <x id="INTERPOLATION" equiv-text="{{mode==&apos;edit&apos; ? (&quot;Edit &quot;+account!.username) : (&quot;Aggiungi Account&quot;)}}"/>
@@ -433,6 +433,66 @@
       <trans-unit id="6578734339769388749" datatype="html">
         <source>enable</source>
         <target state="new">abilita</target>
+      </trans-unit>
+      <trans-unit id="2917923382333289576" datatype="html">
+        <source>Add Accounts with CSV</source>
+        <target state="new">Aggiungi Account con CSV</target>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <target state="new">Nome</target>
+      </trans-unit>
+      <trans-unit id="5248717555542428023" datatype="html">
+        <source>Username</source>
+        <target state="new">Username</target>
+      </trans-unit>
+      <trans-unit id="7315714079098881460" datatype="html">
+        <source>email</source>
+        <target state="new">email</target>
+      </trans-unit>
+      <trans-unit id="4145496584631696119" datatype="html">
+        <source>Role</source>
+        <target state="new">Ruolo</target>
+      </trans-unit>
+      <trans-unit id="4021752662928002901" datatype="html">
+        <source>Update</source>
+        <target state="new">Aggiorna</target>
+      </trans-unit>
+      <trans-unit id="6932865105766151309" datatype="html">
+        <source>Upload</source>
+        <target state="new">Carica</target>
+      </trans-unit>
+      <trans-unit id="8782778013987537094" datatype="html">
+        <source>Updates already existing accounts with matching usernames; adds new accounts if no matching username is found</source>
+        <target state="new">Aggiorna gli account che esistono già; aggiunge un nuovo account se non viene trovato nessun account con quell&apos;username</target>
+      </trans-unit>
+      <trans-unit id="1594358080110738602" datatype="html">
+        <source>Adds new accounts if no existing account has the same username; does nothing if username already exists</source>
+        <target state="new">Aggiunge nuovi account se nessun account esistente ha lo stesso username; non fa nulla se quell&apos;username esiste già</target>
+      </trans-unit>
+      <trans-unit id="360306808317429731" datatype="html">
+        <source>Updates already existing accounts with matching usernames; does nothing if no matching username is found</source>
+        <target state="new">Aggiorna gli account che esistono già; non fa nulla se non viene trovato nessun account con quell&apos;username</target>
+      </trans-unit>
+      <trans-unit id="7531413747798356984" datatype="html">
+        <source>Mode: </source>
+        <target state="new">Modalità: </target>
+      </trans-unit>
+      <trans-unit id="8156239328548103279" datatype="html">
+        <source>Failed user updates:</source>
+        <target state="new">Utenti non caricati:</target>
+      </trans-unit>
+      <trans-unit id="1044086669292507510" datatype="html">
+        <source>Users to update</source>
+        <target state="new">Utenti da aggiornare</target>
+      </trans-unit>
+      <trans-unit id="1259421956660976189" datatype="html">
+        <source>Add Account</source>
+        <target state="new">Aggiungi Account</target>
+      </trans-unit>
+      <trans-unit id="7565155156017938502" datatype="html">
+        <source>Edit </source>
+        <target state="new">Modifica </target>
       </trans-unit>
     </body>
   </file>
