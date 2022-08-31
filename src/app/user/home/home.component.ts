@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   products:ProductDTO[]=[];
   selectedProduct?:ProductDTO;
   searchModel?:string;
-  displayProducts:ProductDTO[]=[]
+  displayProducts:ProductDTO[]=[];
   
   constructor(private productService:ProductService) { }
 
@@ -51,6 +51,9 @@ export class HomeComponent implements OnInit {
   }
 
   search(){
+    (document.getElementById('PANINO') as HTMLInputElement).checked = false;
+    (document.getElementById('BIBITA') as HTMLInputElement).checked = false;
+    (document.getElementById('DOLCE') as HTMLInputElement).checked = false;
     if (this.searchModel==undefined||this.searchModel==="") {
       this.reset();
       return;
